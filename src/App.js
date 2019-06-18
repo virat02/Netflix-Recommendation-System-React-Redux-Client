@@ -5,7 +5,6 @@ import history from './History'
 import {Provider} from 'react-redux'
 import {Router} from 'react-router'
 
-
 class App extends Component {
     render() {
         return (

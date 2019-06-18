@@ -8,8 +8,8 @@ const stateToPropertyMapper = (state) => ({
 });
 
 const dispatcherToPropsMapper = (dispatch) => ({
-    changeUsername: (username) => actions.changeUsername(dispatch,username),
-    changePassword: (password) => actions.changePassword(dispatch,password),
+    changeUsername: username => actions.changeUsername(dispatch,username),
+    changePassword: password => actions.changePassword(dispatch,password),
     doLogin: (username,password) => actions.doLogin(dispatch,username,password)
 });
 
