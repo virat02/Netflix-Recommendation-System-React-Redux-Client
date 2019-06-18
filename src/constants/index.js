@@ -1,0 +1,6 @@
+export const CHANGE_LOGIN_USERNAME = 'CHANGE_LOGIN_USERNAME';
+export const CHANGE_LOGIN_PASSWORD = 'CHANGE_LOGIN_PASSWORD';
+export const RESET_LOGIN_CREDENTIALS = 'RESET_LOGIN_CREDENTIALS';
+export const SET = 'SET';
+export const RESET = 'RESET';
+export const ERROR = 'ERROR';
