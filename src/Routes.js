@@ -5,6 +5,7 @@ import LoginContainer from './containers/LoginContainer';
 import NavBarContainer from './containers/NavBarContainer';
 import FooterContainer from './containers/FooterContainer';
 import RegisterContainer from './containers/RegisterContainer';
+import HomeContainer from './containers/HomeContainer';
 
 export default class Routes extends Component {
 
@@ -14,8 +15,8 @@ export default class Routes extends Component {
             <div>
                 <NavBarContainer/>
                 <div className={"wbdv-body"}>
-                    {/*<Route exact path={"/"} component={HomeContainer}/>*/}
-                    {/*<Route exact path={"/home"} component={HomeContainer}/>*/}
+                    <Route exact path={"/"} component={HomeContainer}/>
+                    <Route exact path={"/home"} component={HomeContainer}/>
                     <Route exact path={"/login"} component={LoginContainer}/>
                     <Route exact path={"/register"} component={RegisterContainer}/>
                 </div>
