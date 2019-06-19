@@ -214,6 +214,9 @@ export const searchTextChanged = (dispatch, searchText) => {
     })
 };
 
+/**
+ * MOVIE DETAILS METHOD
+ */
 export const getMovieDetails = (dispatch, movieId) => {
     movieService.getMovieDetails(movieId)
         .then(movie =>
@@ -221,4 +224,40 @@ export const getMovieDetails = (dispatch, movieId) => {
                 type: constants.MOVIE_DETAILS,
                 movie: movie
             }))
-}
+};
+
+/**
+ * UPCOMING MOVIES METHOD
+ */
+export const getUpcomingMovies = dispatch => {
+    movieService.getUpcomingMovies()
+        .then(upcomingMovies =>
+            dispatch({
+                type: constants.GET_UPCOMING_MOVIES,
+                upcomingMovies: upcomingMovies
+            }))
+};
+
+/**
+ * NOW PLAYING MOVIES METHOD
+ */
+export const getNowPlayingMovies = dispatch => {
+    movieService.getNowPlayingMovies()
+        .then(nowPlayingMovies =>
+            dispatch({
+                type: constants.GET_NOW_PLAYING_MOVIES,
+                nowPlayingMovies: nowPlayingMovies
+            }))
+};
+
+/**
+ * POPULAR MOVIES METHOD
+ */
+export const getPopularMovies = dispatch => {
+    movieService.getPopularMovies()
+        .then(popularMovies =>
+            dispatch({
+                type: constants.GET_POPULAR_MOVIES,
+                popularMovies: popularMovies
+            }))
+};
