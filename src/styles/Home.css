@@ -1,35 +1,25 @@
-.container {
+.movie-card {
     position: relative;
     margin-top: 50px;
-    width: 500px;
+    width: 300px;
     height: 300px;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0);
-    transition: background 0.5s ease;
-}
-
-.container:hover .overlay {
-    display: block;
+.movie-card:hover {
+    display: inline-block;
     background: rgba(0, 0, 0, .3);
 }
 
 img {
-    position: absolute;
-    width: 500px;
+    position: relative;
+    width: 300px;
     height: 300px;
     left: 0;
 }
 
 .title {
     position: absolute;
-    width: 500px;
+    width: 300px;
     left: 0;
     top: 120px;
     font-weight: 700;
@@ -37,17 +27,16 @@ img {
     text-align: center;
     text-transform: uppercase;
     color: white;
-    z-index: 1;
     transition: top .5s ease;
 }
 
-.container:hover .title {
+.movie-card:hover .title {
     top: 90px;
 }
 
 .button {
     position: absolute;
-    width: 500px;
+    width: 300px;
     left:0;
     top: 180px;
     text-align: center;
@@ -64,6 +53,6 @@ img {
     z-index: 1;
 }
 
-.container:hover .button {
+.movie-card:hover .button {
     opacity: 1;
 }
