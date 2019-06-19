@@ -25,9 +25,9 @@ export default class MovieDetailsComponent extends React.Component {
                     </div>
 
                     <div className="col-md-4">
-                        <h3 className="my-3">Project Description</h3>
+                        <h3 className="my-3">Movie Description</h3>
                         <p>{this.props.movie.overview}</p>
-                        <h3 className="my-3">Project Details</h3>
+                        <h3 className="my-3">Movie Details</h3>
                         <ul>
                             <li>Runtime: {this.props.movie.runtime}</li>
                             <li>Release Date: {this.props.movie.releaseDate}</li>

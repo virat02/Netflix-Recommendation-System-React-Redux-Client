@@ -30,3 +30,10 @@ export const SUCCESS = 'SUCCESS';
  */
 export const SET = 'SET';
 export const RESET = 'RESET';
+
+/**
+ * Movie
+ */
+export const SEARCH_MOVIE = 'SEARCH_MOVIE';
+export const SEARCH_TEXT_CHANGED = 'SEARCH_TEXT_CHANGED';
+export const MOVIE_DETAILS = 'MOVIE_DETAILS';

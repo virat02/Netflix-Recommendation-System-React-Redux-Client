@@ -1,5 +1,7 @@
 import * as constants from '../constants'
 import history from '../History'
+import MovieService from "../services/movieService";
+const movieService = new MovieService();
 
 let baseURL = "http://localhost:8080";
 
@@ -186,3 +188,37 @@ export const changeRegisterDescription = (dispatch, description) => (
         description: description
     })
 );
+
+/**
+ * SEARCH MOVIE METHOD
+ */
+
+export const searchMoviesByKeyword = (dispatch, movieTitle) => {
+
+    movieService.searchMovieByMovieName(movieTitle)
+        .then(movies =>
+            dispatch({
+                type: constants.SEARCH_MOVIE,
+                movies: movies
+            })
+        )
+};
+
+/**
+ * HELPER METHOD FOR SEARCH MOVIE
+ */
+export const searchTextChanged = (dispatch, searchText) => {
+    dispatch({
+        type: constants.SEARCH_TEXT_CHANGED,
+        searchText: searchText
+    })
+};
+
+export const getMovieDetails = (dispatch, movieId) => {
+    movieService.getMovieDetails(movieId)
+        .then(movie =>
+            dispatch({
+                type: constants.MOVIE_DETAILS,
+                movie: movie
+            }))
+}

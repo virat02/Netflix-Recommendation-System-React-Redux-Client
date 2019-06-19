@@ -16,7 +16,7 @@ export default class footerComponent extends Component{
                     </div>
                 </div>
                 <div className="col-md-4">
-                    <div>&copy; 2010: A Northeastern University Project</div>
+                    <div>&copy; 2019: A Northeastern University Project</div>
                 </div>
                 <div className="col-md-4">
                     <a className={"wbdv-social-logo"} href="#">

@@ -6,9 +6,10 @@ import NavBarContainer from './containers/NavBarContainer';
 import FooterContainer from './containers/FooterContainer';
 import RegisterContainer from './containers/RegisterContainer';
 import HomeContainer from './containers/HomeContainer';
+import MovieSearchContainer from './containers/MovieSearchContainer';
+import MovieDetailsContainer from "./containers/MovieDetailsContainer";
 
 export default class Routes extends Component {
-
 
     render() {
         return (
@@ -19,6 +20,8 @@ export default class Routes extends Component {
                     <Route exact path={"/home"} component={HomeContainer}/>
                     <Route exact path={"/login"} component={LoginContainer}/>
                     <Route exact path={"/register"} component={RegisterContainer}/>
+                    <Route exact path={"/movies"} component={MovieSearchContainer}/>
+                    <Route exact path={"/movie/:movieId"} component={MovieDetailsContainer} />
                 </div>
                 <FooterContainer/>
             </div>

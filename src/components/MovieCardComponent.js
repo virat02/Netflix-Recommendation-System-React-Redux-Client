@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import "../css/movieCard.css";
 
 const MovieCardComponent = ({movie}) =>
@@ -9,9 +10,9 @@ const MovieCardComponent = ({movie}) =>
              alt="Movie Poster."/>
         <div className="card-body">
             <h5 className="card-title">{movie.title}</h5>
-            <a href={`/movie/${movie.id}`}>
+            <Link to={`/movie/${movie.id}`}>
                 More details
-            </a>
+            </Link>
         </div>
     </div>;
 

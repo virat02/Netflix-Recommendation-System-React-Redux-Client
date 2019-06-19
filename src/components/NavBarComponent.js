@@ -39,7 +39,7 @@ export default class NavBarComponent extends Component{
         let newSearchText;
         let userRole = '';
         if(this.props.localUsername) {
-            userRole = this.props.localRole?this.props.localRole:''
+            userRole = this.props.localRole ? this.props.localRole : ''
         }
         return(
             <header className={"container-fluid"}>
@@ -62,11 +62,13 @@ export default class NavBarComponent extends Component{
                                 <button className={"btn btn-success wbdv-search-btn"}
                                         type={"button"}
                                         onClick={()=>{
-                                            history.push('/search');
-                                            this.props.searchMoviesByKeyword(this.props.searchText);
+                                            history.push('/movies');
+                                            if(this.props.searchText.length !== 0){
+                                                this.props.searchMoviesByKeyword(this.props.searchText);
+                                            }
                                         }}>
                                     <span className={"text-center wbdv-search-btn-text"}>
-                                    Find Movies
+                                    Search
                                     </span>
                                 </button>
                             </div>

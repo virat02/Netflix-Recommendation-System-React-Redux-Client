@@ -1,23 +1,32 @@
+import * as constants from '../constants'
+
 const movieReducer = (state = {
                                 movies: [],
-                                movie: {},
-                                showDetails: false
+                                searchText: '',
+                                movie: ''
                               },
                       action) => {
     switch (action.type) {
 
-        case "SEARCH_MOVIE":
+        case constants.SEARCH_TEXT_CHANGED:
             return {
-                movies: action.movies,
-                movie: state.movie,
-                showDetails: state.showDetails
+                movies: state.movies,
+                searchText: action.searchText,
+                movie: state.movie
             };
 
-        case "MOVIE_DETAILS":
+        case constants.SEARCH_MOVIE:
             return {
-                movie: action.movie,
+                movies: action.movies,
+                searchText: state.searchText,
+                movie: state.movie
+            };
+
+        case constants.MOVIE_DETAILS:
+            return {
                 movies: state.movies,
-                showDetails: true
+                searchText: state.searchText,
+                movie: action.movie
             };
 
         default:

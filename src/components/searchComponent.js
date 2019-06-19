@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieCardComponent from "../components/movieCardComponent";
+import MovieCardComponent from "./MovieSearchComponent";
 
 export default class SearchComponent extends React.Component {
 
