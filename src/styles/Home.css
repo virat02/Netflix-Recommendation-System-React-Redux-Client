@@ -1,6 +1,6 @@
 .movie-card {
     position: relative;
-    margin-top: 50px;
+    margin-top: 15px;
     width: 300px;
     height: 300px;
 }
@@ -56,4 +56,9 @@ img {
 
 .movie-card:hover .button {
     opacity: 1;
+}
+
+.movies-header {
+    text-align: left;
+    margin-top: 50px;
 }
