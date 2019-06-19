@@ -10,6 +10,6 @@ import HomeComponent from "../components/HomeComponent";
 //     logOut: () => actions.logOut(dispatch),
 // });
 
-const NavBarContainer = connect()(HomeComponent);
+const HomeContainer = connect()(HomeComponent);
 
-export default NavBarContainer;
+export default HomeContainer;

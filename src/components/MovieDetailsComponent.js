@@ -5,7 +5,6 @@ export default class MovieDetailsComponent extends React.Component {
 
     constructor(props) {
         super(props);
-
     }
 
     componentDidMount = () =>
