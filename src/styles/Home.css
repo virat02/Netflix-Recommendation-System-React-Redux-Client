@@ -49,6 +49,7 @@ img {
     padding: 12px 48px;
     text-align: center;
     color: white;
+    background-color: #555555;
     border: solid 2px white;
     z-index: 1;
 }

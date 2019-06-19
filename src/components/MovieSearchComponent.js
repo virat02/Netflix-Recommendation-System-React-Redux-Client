@@ -9,7 +9,7 @@ export default class MovieSearchComponent extends React.Component {
 
     render() {
         return (
-            <div className="card-columns">
+            <div className="row">
                 {
                     this.props.movies.map(movie =>
                         <MovieCardComponent
