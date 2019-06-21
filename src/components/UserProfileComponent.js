@@ -1,7 +1,8 @@
 import React from 'react';
 import {Route, Link} from "react-router-dom";
 
-import FollowerComponent from "../components/FollowerComponent";
+import FollowerContainer from "../containers/FollowerContainer";
+import FollowingContainer from "../containers/FollowingContainer";
 import ActorListComponent from "../components/ActorListComponent";
 import MovieListContainer from "../containers/MovieListContainer";
 
@@ -42,8 +43,8 @@ export default class UserProfileComponent extends React.Component {
                         </li>
                     </ul>
 
-                    <Route exact path={"/profile/:username/followers"} component={FollowerComponent}/>
-                    <Route exact path={"/profile/:username/following"} component={FollowerComponent}/>
+                    <Route exact path={"/profile/:username/followers"} component={FollowerContainer}/>
+                    <Route exact path={"/profile/:username/following"} component={FollowingContainer}/>
                     <Route exact path={"/profile/:username/actorsFollowed"} component={ActorListComponent}/>
                     <Route path={"/profile/:username/moviesLiked"} component={MovieListContainer}/>
                 </div>

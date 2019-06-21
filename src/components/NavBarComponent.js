@@ -2,10 +2,21 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom';
 import history from "../History";
 import "../styles/NavBar.css";
+import Select from 'react-select';
+
+const searchFor = [
+    { label: "Movies", value: 1 },
+    { label: "Actors", value: 2 },
+];
 
 export default class NavBarComponent extends Component{
     constructor(props){
         super(props);
+
+        this.state={
+            searchValue: "Movies",
+            placeholder: "Search for Movies"
+        }
     }
 
     renderLogin() {
@@ -36,12 +47,19 @@ export default class NavBarComponent extends Component{
         }
     }
 
+    changeSearchType = searchValue =>
+        this.setState({
+            searchValue: searchValue,
+            placeholder: "Search for "+ searchValue
+        });
+
     render() {
         let newSearchText;
         let userRole = '';
         if(this.props.localUsername) {
             userRole = this.props.localRole ? this.props.localRole : ''
         }
+
         return(
             <header className={"container-fluid"}>
                 <nav className={"navbar navbar-expand-md navbar-dark fixed-top row"}>
@@ -52,28 +70,37 @@ export default class NavBarComponent extends Component{
                             </span>
                         </a>
                     </div>
-                    <div className={"col-md-6"}>
-                        <form className={"form-inline row"}>
-                            <div className={"col-md-12 wbdv-search-box"}>
-                                <input className={"form-control wbdv-search-bar input-lg"}
-                                       type={"text"} placeholder={"Enter movie name to search"}
+                    <div className="col-md-4">
+                        <div className="row">
+                            <input className={"form-control wbdv-search-bar input-lg"}
+                                       type="text"
+                                       placeholder={this.state.placeholder}
                                        onChange={()=> this.props.searchTextChanged(newSearchText.value)}
                                        ref={node => newSearchText=node}
-                                       aria-label={"Search"}/>
+                                       aria-label="Search"/>
                                 <button className="btn btn-success wbdv-search-btn"
                                         type="button"
                                         onClick={()=>{
-                                            history.push('/movies');
                                             if(this.props.searchText.length !== 0){
-                                                this.props.searchMoviesByKeyword(this.props.searchText);
+                                                if(this.state.searchValue === "Movies"){
+                                                    history.push('/movies');
+                                                    this.props.searchMoviesByKeyword(this.props.searchText);
+                                                }
+                                                else if(this.state.searchValue === "Actors") {
+                                                    history.push('/actors');
+                                                    this.props.searchActorsByKeyword(this.props.searchText);
+                                                }
                                             }
                                         }}>
                                     <span className={"text-center wbdv-search-btn-text"}>
                                     Search
                                     </span>
                                 </button>
-                            </div>
-                        </form>
+                        </div>
+                    </div>
+                    <div className="col-md-2">
+                        <Select options={searchFor}
+                                onChange={opt => this.changeSearchType(opt.label)}/>
                     </div>
                     <div className="col-md-4">
                         <div className="navbar" id="navbarCollapse">

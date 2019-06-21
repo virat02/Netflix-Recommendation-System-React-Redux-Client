@@ -362,5 +362,14 @@ export const getMoviesLiked = (dispatch, username) => {
             }))
 };
 
+export const searchActorsByKeyword = (dispatch, actorName) => {
+    actorService.getActors(actorName)
+        .then(actors =>
+            dispatch({
+                type: constants.SEARCH_ACTORS,
+                actors: actors
+            }))
+};
+
 
 

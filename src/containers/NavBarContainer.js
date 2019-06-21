@@ -11,6 +11,7 @@ const stateToPropertyMapper = state => ({
 export const dispatcherToPropsMapper = dispatch => ({
     searchTextChanged: newText => actions.searchTextChanged(dispatch, newText),
     searchMoviesByKeyword: movieTitle => actions.searchMoviesByKeyword(dispatch, movieTitle),
+    searchActorsByKeyword: actorName => actions.searchActorsByKeyword(dispatch, actorName),
     logOut: () => actions.logOut(dispatch),
 });
 

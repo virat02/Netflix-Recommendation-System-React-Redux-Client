@@ -14,5 +14,10 @@ export default class ActorService {
     //Get actors followed
     getActorsFollowed = username =>
         fetch(baseURL+"/api/follow/fan/"+username+"/actorfollowed")
+            .then(response => response.json());
+
+    //Get all actors
+    getActors = actorName =>
+        fetch(baseURL+"/api/search/actor")
             .then(response => response.json())
 }

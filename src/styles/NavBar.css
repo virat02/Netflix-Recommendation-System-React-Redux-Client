@@ -1,17 +1,17 @@
 .wbdv-search-bar{
-    display: inline-block;
+    display: inline;
     vertical-align: center;
-    width: 40% !important;
-    margin-right: 80px;
+    width: 65% !important;
+    margin-right: auto;
 }
 
 .wbdv-search-btn{
-    padding-right: -200px;
     display: inline;
-    margin-left: -90px;
     border-bottom-left-radius: 0px !important;
     border-top-left-radius: 0px !important;
+    margin-left: -100px;
 }
+
 .wbdv-search-btn-text{
     border-bottom-left-radius: 0px !important;
     border-top-left-radius: 0px !important;
@@ -19,9 +19,6 @@
 
 .btn-outline-success{
     width: 100% !important;
-}
-
-.form-inline .form-control{
 }
 
 .wbdv-link{

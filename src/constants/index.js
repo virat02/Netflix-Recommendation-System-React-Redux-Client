@@ -57,3 +57,4 @@ export const GET_MOVIES_LIKED = 'GET_MOVIES_LIKED';
  * Actor
  */
 export const GET_ACTORS_FOLLOWED = 'GET_ACTORS_FOLLOWED';
+export const SEARCH_ACTORS = 'SEARCH_ACTORS';
