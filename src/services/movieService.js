@@ -1,9 +1,6 @@
-import userService from "./userService";
-
 let singleton = null;
 let movies = {};
 let baseURL = "http://localhost:8080";
-//let baseURL = "https://powerful-bastion-59890.herokuapp.com/";
 
 export default class MovieService {
 

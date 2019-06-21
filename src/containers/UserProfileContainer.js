@@ -9,7 +9,7 @@ const stateToPropertyMapper = state => ({
     setFanFollowingPill: state.ActivatePillReducer.setFanFollowingPill,
     setCriticFollowingPill: state.ActivatePillReducer.setCriticFollowingPill,
     setActorFollowingPill: state.ActivatePillReducer.setActorFollowingPill,
-    setMoviesLikePill: state.ActivatePillReducer.setMovieLikePill,
+    setMoviesLikePill: state.ActivatePillReducer.setMoviesLikePill,
     setMoviesReviewPill: state.ActivatePillReducer.setMoviesReviewPill,
     setMoviesRecommendPill: state.ActivatePillReducer.setMoviesRecommendPill
 });

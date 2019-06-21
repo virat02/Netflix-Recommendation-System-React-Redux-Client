@@ -1,11 +1,11 @@
-.movie-card {
+.actor-card {
     position: relative;
     margin-top: 15px;
     width: 300px;
     height: 300px;
 }
 
-.movie-card:hover {
+.actor-card:hover {
     display: inline-block;
     background: rgba(0, 0, 0, .3);
 }
@@ -30,7 +30,7 @@ img {
     transition: top .5s ease;
 }
 
-.movie-card:hover .title {
+.actor-card:hover .title {
     top: 90px;
 }
 
@@ -54,16 +54,16 @@ img {
     z-index: 1;
 }
 
-.movie-card:hover .button {
+.actor-card:hover .button {
     opacity: 1;
 }
 
-.movies-header {
+.actors-header {
     text-align: left;
     margin-top: 50px;
 }
 
-.movie-card-image:hover {
+.actor-card-image:hover {
     --webkit-filter: blur(4px);
     filter: blur(4px);
 }

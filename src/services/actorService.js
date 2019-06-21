@@ -18,6 +18,11 @@ export default class ActorService {
 
     //Get all actors
     getActors = actorName =>
-        fetch(baseURL+"/api/search/actor")
-            .then(response => response.json())
+        fetch(baseURL+"/api/search/actors?query="+actorName)
+            .then(response => response.json());
+
+    //Gets the details for a particular actor
+    getActorDetails = actorId =>
+        fetch(baseURL + "/api/actors/" + actorId)
+            .then(response => response.json());
 }

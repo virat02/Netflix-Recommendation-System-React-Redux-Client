@@ -8,7 +8,7 @@ export default class FollowerComponent extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getFollowers(this.props.match.params.username);
+        this.props.getFollowers(this.props.match.params.username, this.props.userRole);
     }
 
     render() {

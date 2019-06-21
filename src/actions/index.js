@@ -304,6 +304,18 @@ export const recommendMovie = (dispatch, movieId, username) => {
 };
 
 /**
+ * FOLLOW AN ACTOR METHOD
+ */
+export const followActor = (dispatch, actorId, username) => {
+    actorService.followActor(actorId,username)
+        .then(() =>
+            dispatch({
+                type: constants.SET_FOLLOWED_ALERT,
+                message: "Followed the actor!"
+            }))
+};
+
+/**
  * SHOW REVIEW MODAL METHOD
  */
 export const showReviewModal = dispatch =>
@@ -315,8 +327,8 @@ export const showReviewModal = dispatch =>
 /**
  * METHOD TO GET FOLLOWERS
  */
-export const getFollowers = (dispatch, username) => {
-    userService.getFollowers(username)
+export const getFollowers = (dispatch, username, userRole) => {
+    userService.getFollowers(username, userRole)
         .then(followers =>
             dispatch({
                 type: constants.GET_FOLLOWERS,
@@ -328,8 +340,8 @@ export const getFollowers = (dispatch, username) => {
 /**
  * METHOD TO GET FOLLOWING
  */
-export const getFollowing = (dispatch, username) => {
-    userService.getFollowing(username)
+export const getFollowing = (dispatch, username, userRole) => {
+    userService.getFollowing(username, userRole)
         .then(following =>
             dispatch({
                 type: constants.GET_FOLLOWING,
@@ -460,6 +472,30 @@ export const activeMovieRecommendPill = dispatch =>
         type: constants.ACTIVATE_MOVIE_RECOMMEND_PILL,
         setMovieRecommendPill: true
     });
+
+/**
+ * METHOD TO GET LIST OF CRITICS FOLLOWED BY A FAN
+ */
+export const getCriticsFollowed = (dispatch, username) => {
+    userService.getCriticsFollowed(username)
+        .then(criticsFollowed =>
+            dispatch({
+                type: constants.GET_CRITICS_FOLLOWED,
+                criticsFollowed: criticsFollowed
+            }))
+};
+
+/**
+ * ACTOR DETAILS METHOD
+ */
+export const getActorDetails = (dispatch, actorId) => {
+    actorService.getActorDetails(actorId)
+        .then(actor =>
+            dispatch({
+                type: constants.ACTOR_DETAILS,
+                actor: actor
+            }))
+};
 
 
 

@@ -10,6 +10,6 @@ const dispatcherToPropsMapper = dispatch => ({
     getMoviesLiked: username => actions.getMoviesLiked(dispatch, username)
 });
 
-const MovieSearchContainer = connect(stateToPropertyMapper, dispatcherToPropsMapper)(MovieLikeComponent);
+const MoviesLikeContainer = connect(stateToPropertyMapper, dispatcherToPropsMapper)(MovieLikeComponent);
 
-export default MovieSearchContainer
+export default MoviesLikeContainer

@@ -12,22 +12,18 @@ export default class UserService {
     }
 
     //Get followers
-    getFollowers = username =>
-        fetch(baseURL+"/api/follow/fan/"+username+"/followedby")
+    getFollowers = (username, userRole) =>
+        fetch(baseURL+"/api/follow/"+userRole.toLowerCase()+"/"+username+"/followedby")
             .then(response => response.json());
 
     //Get following
-    getFollowing = (username, userRole) =>{
-        if(userRole === "Fan"){
-            return fetch(baseURL+"/api/follow/fan/"+username+"/fansfollowing")
-                .then(response => response.json())
-        }
-        else {
-            return fetch(baseURL+"/api/follow/critic/"+username+"/fansfollowing")
-                .then(response => response.json())
-        }
+    getFollowing = (username, userRole) =>
+        fetch(baseURL+"/api/follow/"+userRole.toLowerCase()+"/"+username+"/fansfollowing")
+            .then(response => response.json());
 
-    }
-
+    //Get list of critics followed by the fan
+    getCriticsFollowed = username =>
+        fetch(baseURL+"/api/follow/fan/"+username+"/criticfollowed")
+            .then(response => response.json());
 
 }

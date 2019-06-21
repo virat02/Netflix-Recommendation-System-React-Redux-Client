@@ -3,10 +3,11 @@ import {Route, Link} from "react-router-dom";
 
 import FollowerContainer from "../containers/FollowerContainer";
 import FollowingContainer from "../containers/FollowingContainer";
-import ActorListComponent from "../components/ActorListComponent";
-import MovieListContainer from "../containers/MovieListContainer";
+import ActorListContainer from "../containers/ActorListContainer";
+import MoviesLikeContainer from "../containers/MoviesLikeContainer";
 import MovieReviewContainer from "../containers/MovieReviewContainer";
 import MovieRecommendContainer from "../containers/MovieRecommendContainer";
+import CriticsFollowingContainer from "../containers/CriticsFollowingContainer";
 
 export default class UserProfileComponent extends React.Component {
 
@@ -90,9 +91,9 @@ export default class UserProfileComponent extends React.Component {
 
                     <Route exact path={"/profile/:username/followers"} component={FollowerContainer}/>
                     <Route exact path={"/profile/:username/fan/following"} component={FollowingContainer}/>
-                    <Route exact path={"/profile/:username/critic/following"} component={FollowingContainer}/>
-                    <Route exact path={"/profile/:username/actorsFollowed"} component={ActorListComponent}/>
-                    <Route path={"/profile/:username/moviesLiked"} component={MovieListContainer}/>
+                    <Route exact path={"/profile/:username/critic/following"} component={CriticsFollowingContainer}/>
+                    <Route exact path={"/profile/:username/actorsFollowed"} component={ActorListContainer}/>
+                    <Route path={"/profile/:username/moviesLiked"} component={MoviesLikeContainer}/>
                     <Route path={"/profile/:username/moviesReviewed"} component={MovieReviewContainer}/>
                     <Route path={"/profile/:username/moviesRecommended"} component={MovieRecommendContainer}/>
                 </div>

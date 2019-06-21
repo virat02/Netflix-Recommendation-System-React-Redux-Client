@@ -4,15 +4,10 @@ const AlertReducer = (state = {}, action) => {
 
     switch (action.type) {
         case constants.SUCCESS:
-            alert(action.message);
-            return state;
         case constants.ERROR:
-            alert(action.message);
-            return state;
         case constants.SET_LIKED_ALERT:
-            alert(action.message);
-            return state;
         case constants.SET_RECOMMENDED_ALERT:
+        case constants.SET_FOLLOWED_ALERT:
             alert(action.message);
             return state;
         default :

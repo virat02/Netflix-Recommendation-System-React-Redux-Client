@@ -53,8 +53,8 @@ export default class MovieDetailsComponent extends React.Component {
                                                 this.props.localUsername)}>
                                         Recommend
                                     </button>
-
                                 }
+                                &nbsp;&nbsp;
                                 {
                                     this.props.localRole === "Critic" &&
                                     <button id="btnReview"
@@ -65,7 +65,6 @@ export default class MovieDetailsComponent extends React.Component {
                                             onClick={this.props.showModal}>
                                         Review
                                     </button>
-
                                 }
                             </div>
                         </div>

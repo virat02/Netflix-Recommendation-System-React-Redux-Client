@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieSearchCardComponent from "./MovieSearchCardComponent";
+import "../styles/movieCard.css";
 
 export default class MovieSearchComponent extends React.Component {
 

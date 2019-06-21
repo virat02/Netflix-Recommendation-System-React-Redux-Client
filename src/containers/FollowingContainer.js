@@ -4,10 +4,11 @@ import * as actions from "../actions";
 
 const stateToPropertyMapper = state => ({
     following: state.UserReducer.following,
+    userRole: state.LocalStorageReducer.localRole
 });
 
 export const dispatcherToPropsMapper = dispatch => ({
-    getFollowing: username => actions.getFollowing(dispatch, username),
+    getFollowing: (username, userRole) => actions.getFollowing(dispatch, username, userRole),
 });
 
 const FollowingContainer = connect(stateToPropertyMapper, dispatcherToPropsMapper)(FollowingComponent);
