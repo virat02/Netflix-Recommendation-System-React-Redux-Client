@@ -12,15 +12,18 @@ export default class ActorListComponent extends React.Component {
     }
 
     render() {
+
+        console.log(this.props.actorsFollowed);
+
         return (
             <div className="row">
                 {
-                    this.props.actorsFollowed.map(movie =>
+                    this.props.actorsFollowed.map(actor =>
                         <ActorCardComponent
                             className="col-2"
                             getActorDetails = {this.props.getActorDetails}
-                            movie={movie}
-                            key={movie.id}/>)
+                            actor={actor}
+                            key={actor.actorId}/>)
                 }
             </div>
         );

@@ -34,7 +34,11 @@ export default class ActorDetailsComponent extends React.Component {
                         <ul>
                             <li>Popularity: {this.props.actor.actorPopularity}</li>
                             <li>Birth Date: {this.props.actor.dob}</li>
-                            <li>Wikipedia Link: {this.props.actor.imdbId}</li>
+                            <li>
+                                <a href = "#">
+                                    {this.props.actor.actorName}'s Wikipedia Page
+                                </a>
+                            </li>
                         </ul>
 
                         <div className="row">
@@ -42,7 +46,7 @@ export default class ActorDetailsComponent extends React.Component {
                                 {
                                     this.props.localRole === "Fan" &&
                                     <button id="btnLike" className="btn btn-primary btn-md center-block"
-                                            onClick={() => this.props.followActor(this.props.actor.id,
+                                            onClick={() => this.props.followActor(this.props.actor.actorId,
                                                 this.props.localUsername)}>
                                         Follow
                                     </button>
