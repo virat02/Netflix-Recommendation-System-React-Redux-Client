@@ -35,7 +35,7 @@ export default class ActorDetailsComponent extends React.Component {
                             <li>Popularity: {this.props.actor.actorPopularity}</li>
                             <li>Birth Date: {this.props.actor.dob}</li>
                             <li>
-                                <a href = "#">
+                                <a href = {this.props.actor.wikilink} target="_blank">
                                     {this.props.actor.actorName}'s Wikipedia Page
                                 </a>
                             </li>
