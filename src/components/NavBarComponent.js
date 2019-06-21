@@ -28,7 +28,8 @@ export default class NavBarComponent extends Component{
                 <span className={"sr-only"}>(current)</span>
             </Link>
         } else {
-            return <Link to={"/profile/" + this.props.localUsername + "/view"} className={'wbdv-link nav-link'}>
+            return <Link to={"/profile/" + this.props.localUsername}
+                         className={'wbdv-link nav-link'}>
                 Profile
                 <span className={"sr-only"}>(current)</span>
             </Link>
@@ -47,7 +48,7 @@ export default class NavBarComponent extends Component{
                     <div className={"col-md-2"}>
                         <a className={"navbar-brand"} href={"/"}>
                             <span>
-                                Movie Search
+                                Netflix
                             </span>
                         </a>
                     </div>
@@ -59,8 +60,8 @@ export default class NavBarComponent extends Component{
                                        onChange={()=> this.props.searchTextChanged(newSearchText.value)}
                                        ref={node => newSearchText=node}
                                        aria-label={"Search"}/>
-                                <button className={"btn btn-success wbdv-search-btn"}
-                                        type={"button"}
+                                <button className="btn btn-success wbdv-search-btn"
+                                        type="button"
                                         onClick={()=>{
                                             history.push('/movies');
                                             if(this.props.searchText.length !== 0){
@@ -74,23 +75,15 @@ export default class NavBarComponent extends Component{
                             </div>
                         </form>
                     </div>
-                    <div className={"col-md-4"}>
-                        <div className={"navbar"} id={"navbarCollapse"}>
-                            <ul className={"navbar-nav"}>
-                                <li className={"nav-item"}>
-                                    <Link to={`/`} className={'wbdv-link nav-link'}>
+                    <div className="col-md-4">
+                        <div className="navbar" id="navbarCollapse">
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
+                                    <Link to={`/`} className='wbdv-link nav-link'>
                                         Home
-                                        <span className={"sr-only"}>(current)</span>
+                                        <span className="sr-only">(current)</span>
                                     </Link>
                                 </li>
-                                {userRole &&
-                                userRole === 'Moderator' &&
-                                <li className={"nav-item"}>
-                                    <Link to={`/moderatorConsole`} className={'wbdv-link nav-link'}>
-                                        Moderator-Console
-                                        <span className={"sr-only"}>(current)</span>
-                                    </Link>
-                                </li>}
                                 {userRole &&
                                 userRole === 'Admin' &&
                                 <li className={"nav-item"}>

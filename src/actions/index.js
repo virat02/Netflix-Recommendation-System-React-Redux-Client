@@ -1,7 +1,12 @@
 import * as constants from '../constants'
 import history from '../History'
 import MovieService from "../services/movieService";
+import UserService from "../services/userService";
+import ActorService from "../services/actorService";
+
 const movieService = new MovieService();
+const userService = new UserService();
+const actorService = new ActorService();
 
 let baseURL = "http://localhost:8080";
 
@@ -261,3 +266,101 @@ export const getPopularMovies = dispatch => {
                 popularMovies: popularMovies
             }))
 };
+
+/**
+ * LIKE A MOVIE METHOD
+ */
+export const likeMovie = (dispatch, movieId, username) => {
+    movieService.likeMovie(movieId, username)
+        .then(() =>
+            dispatch({
+                type:constants.SET_LIKED_ALERT,
+                message: "Liked the movie!"
+            }))
+};
+
+/**
+ * REVIEW A MOVIE METHOD
+ */
+export const reviewMovie = (dispatch, movieId, username) => {
+    movieService.reviewMovie(movieId, username)
+        .then(() =>
+            dispatch({
+                type:constants.SET_FOLLOWED_ALERT,
+            })
+        )
+};
+
+/**
+ * RECOMMEND A MOVIE METHOD
+ */
+export const recommendMovie = (dispatch, movieId, username) => {
+    movieService.recommendMovie(movieId, username)
+        .then(() =>
+            dispatch({
+                type: constants.SET_RECOMMENDED_ALERT,
+                message: "Recommended the movie!"
+            }))
+};
+
+/**
+ * SHOW REVIEW MODAL METHOD
+ */
+export const showReviewModal = dispatch =>
+    dispatch({
+       type:constants.SHOW_REVIEW_MODAL,
+       showReviewModal: true
+    });
+
+/**
+ * METHOD TO GET FOLLOWERS
+ */
+export const getFollowers = (dispatch, username) => {
+    userService.getFollowers(username)
+        .then(followers =>
+            dispatch({
+                type: constants.GET_FOLLOWERS,
+                followers: followers
+            })
+        )
+};
+
+/**
+ * METHOD TO GET FOLLOWING
+ */
+export const getFollowing = (dispatch, username) => {
+    userService.getFollowing(username)
+        .then(following =>
+            dispatch({
+                type: constants.GET_FOLLOWING,
+                following: following
+            })
+        )
+};
+
+/**
+ * METHOD TO GET ACTORS FOLLOWED
+ */
+export const getActorsFollowed = (dispatch, username) => {
+    actorService.getActorsFollowed(username)
+        .then(actors =>
+            dispatch({
+                type: constants.GET_ACTORS_FOLLOWED,
+                actorsFollowed: actors
+            }))
+};
+
+/**
+ * METHOD TO GET MOVIES LIKED
+ */
+export const getMoviesLiked = (dispatch, username) => {
+    movieService.getMoviesLiked(username)
+        .then(movies =>
+            dispatch({
+                type: constants.GET_MOVIES_LIKED,
+                moviesLiked: movies
+            }))
+};
+
+
+

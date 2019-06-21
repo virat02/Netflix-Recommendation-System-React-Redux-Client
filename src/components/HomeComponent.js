@@ -18,19 +18,25 @@ export default class HomeComponent extends Component {
         return(
             <div className="container-fluid">
                 <h3 className="movies-header"> Upcoming Movies </h3>
-                <div className="row">
-                    {
-                        this.props.upcomingMovies.map(movie =>
-                            <MovieCardComponent
-                                className="col-2"
-                                getMovieDetails = {this.props.getMovieDetails}
-                                movie={movie}
-                                key={movie.id}/>)
-                    }
+                <div className="contain">
+                    <div className="movie-row flex-row flex-nowrap">
+                        <div className="row__inner">
+                {
+                    this.props.upcomingMovies.map(movie =>
+                        <MovieCardComponent
+                            className="col-2"
+                            getMovieDetails = {this.props.getMovieDetails}
+                            movie={movie}
+                            key={movie.id}/>)
+                }
+                        </div>
+                    </div>
                 </div>
 
                 <h3 className="movies-header"> Now Playing Movies </h3>
-                <div className="row">
+                <div className="contain">
+                    <div className="movie-row flex-row flex-nowrap">
+                        <div className="row__inner">
                     {
                         this.props.nowPlayingMovies.map(movie =>
                             <MovieCardComponent
@@ -39,10 +45,14 @@ export default class HomeComponent extends Component {
                                 movie={movie}
                                 key={movie.id}/>)
                     }
+                        </div>
+                    </div>
                 </div>
 
                 <h3 className="movies-header"> Popular Movies </h3>
-                <div className="row">
+                <div className="contain">
+                    <div className="movie-row flex-row flex-nowrap">
+                        <div className="row__inner">
                     {
                         this.props.popularMovies.map(movie =>
                             <MovieCardComponent
@@ -51,6 +61,8 @@ export default class HomeComponent extends Component {
                                 movie={movie}
                                 key={movie.id}/>)
                     }
+                        </div>
+                    </div>
                 </div>
             </div>
     )}

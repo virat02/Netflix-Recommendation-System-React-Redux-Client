@@ -82,13 +82,6 @@ export default class LoginComponent extends Component {
                                         }}>
                                     Login
                                 </button>
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        {/*<a href="#">Forgot Password?</a>*/}
-                                    </div>
-                                    <span className="col-md-6">
-                                    </span>
-                                </div>
                             </div>
                         </div>
                     </form>

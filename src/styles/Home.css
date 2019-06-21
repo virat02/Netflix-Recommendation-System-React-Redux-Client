@@ -62,3 +62,101 @@ img {
     text-align: left;
     margin-top: 50px;
 }
+
+.movie-card-image:hover {
+    --webkit-filter: blur(4px);
+    filter: blur(4px);
+}
+
+/**
+CSS for netflix like movie poster scrolling
+ */
+
+.contain {
+    width: 100%;
+}
+.movie-row {
+    overflow: auto;
+    width: 100%;
+}
+.row__inner {
+    transition: 450ms transform, 450ms -webkit-transform;
+    font-size: 0;
+    white-space: nowrap;
+    margin: 70.3125px 0;
+    padding-bottom: 10px;
+}
+.tile {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    height: 140.625px;
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 450ms all;
+}
+
+.tile__img {
+    width: 250px;
+    height: 140.625px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.tile__details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    font-size: 10px;
+    font-weight: bold;
+    opacity: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    transition: 450ms opacity;
+}
+.tile__details:after,
+.tile__details:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+}
+
+.tile:hover .tile__details {
+    opacity: 1;
+}
+
+.tile:hover {
+    display: inline-block;
+}
+
+.tile__title{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    color: darkorange;
+}
+.row__inner:hover {
+    -webkit-transform: translate3d(-62.5px, 0, 0);
+    transform: translate3d(-62.5px, 0, 0);
+}
+.row__inner:hover .tile {
+    opacity: 0.3;
+}
+.row__inner:hover .tile:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    opacity: 1;
+}
+.tile:hover ~ .tile {
+    -webkit-transform: translate3d(125px, 0, 0);
+    transform: translate3d(125px, 0, 0);
+}
+
+.details-btn {
+    color: darkorange;
+}

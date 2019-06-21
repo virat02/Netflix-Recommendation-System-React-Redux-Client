@@ -36,4 +36,30 @@ export default class MovieService {
     getPopularMovies = () =>
         fetch(baseURL+"/api/movies/popular")
             .then(response => response.json());
+
+    //Like a movie
+    likeMovie = (movieId, username) => {
+        return fetch(baseURL + "/api/like/movie/" + movieId + "/fan/" + username, {
+            method: 'post',
+            headers: {
+                'content-type' : 'application/json'
+            }
+        })
+    };
+
+    //Recommend a movie
+    recommendMovie = (movieId, username) => {
+        return fetch(baseURL+"/api/recommend/movie/"+movieId+"/critic/"+username, {
+            method: 'post',
+            headers: {
+                'content-type' : 'application/json'
+            }
+        })
+    };
+
+    //Get Movies Liked
+    getMoviesLiked = username =>
+        fetch(baseURL+"/api/like/fan/"+username+"/moviesliked")
+            .then(response => response.json())
+
 }

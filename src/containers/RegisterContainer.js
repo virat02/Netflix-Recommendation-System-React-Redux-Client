@@ -32,4 +32,4 @@ export const dispatcherToPropsMapper = dispatch => ({
 
 const RegisterContainer = connect(stateToPropertyMapper, dispatcherToPropsMapper)(RegisterComponent);
 
-export default RegisterContainer
+export default RegisterContainer;

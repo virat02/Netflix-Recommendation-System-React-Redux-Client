@@ -1,19 +1,22 @@
 import React from 'react';
-import "../css/movieCard.css";
+import "../styles/movieCard.css";
 
 const MovieCardComponent = ({movie}) =>
 
-    <div className="col-md-4">
-        <div className="movie-card">
-            <img
-                src={movie.posterUrl}
-                alt="Movie Poster."/>
-            <div className="button">
-                <a href={`/movie/${movie.id}`}>
-                    Movie details
-                </a>
+    <div className="tile">
+        <a className="details-btn" href={`/movie/${movie.id}`}>
+            <div className="tile__media">
+                <img className="tile__img"
+                     src={movie.posterUrl} alt="Movie poster."/>
             </div>
-        </div>
+            <div className="tile__details">
+                <div className="tile__title">
+                    <a className="details-btn" href={`/movie/${movie.id}`}>
+                        {movie.title}
+                    </a>
+                </div>
+            </div>
+        </a>
     </div>;
 
 export default MovieCardComponent;

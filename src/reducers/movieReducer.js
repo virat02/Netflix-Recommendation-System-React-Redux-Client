@@ -6,7 +6,8 @@ const movieReducer = (state = {
                                 movie: '',
                                 upcomingMovies: [],
                                 nowPlayingMovies: [],
-                                popularMovies: []
+                                popularMovies: [],
+                                moviesLiked: []
                               },
                       action) => {
     switch (action.type) {
@@ -18,7 +19,8 @@ const movieReducer = (state = {
                 movie: state.movie,
                 upcomingMovies: state.upcomingMovies,
                 nowPlayingMovies: state.nowPlayingMovies,
-                popularMovies: state.popularMovies
+                popularMovies: state.popularMovies,
+                moviesLiked: state.moviesLiked
             };
 
         case constants.SEARCH_MOVIE:
@@ -28,7 +30,8 @@ const movieReducer = (state = {
                 movie: state.movie,
                 upcomingMovies: state.upcomingMovies,
                 nowPlayingMovies: state.nowPlayingMovies,
-                popularMovies: state.popularMovies
+                popularMovies: state.popularMovies,
+                moviesLiked: state.moviesLiked
             };
 
         case constants.MOVIE_DETAILS:
@@ -38,7 +41,8 @@ const movieReducer = (state = {
                 movie: action.movie,
                 upcomingMovies: state.upcomingMovies,
                 nowPlayingMovies: state.nowPlayingMovies,
-                popularMovies: state.popularMovies
+                popularMovies: state.popularMovies,
+                moviesLiked: state.moviesLiked
             };
 
         case constants.GET_UPCOMING_MOVIES:
@@ -48,7 +52,8 @@ const movieReducer = (state = {
                 movie: state.movie,
                 upcomingMovies: action.upcomingMovies,
                 nowPlayingMovies: state.nowPlayingMovies,
-                popularMovies: state.popularMovies
+                popularMovies: state.popularMovies,
+                moviesLiked: state.moviesLiked
             };
 
         case constants.GET_NOW_PLAYING_MOVIES:
@@ -58,7 +63,8 @@ const movieReducer = (state = {
                 movie: state.movie,
                 upcomingMovies: state.upcomingMovies,
                 nowPlayingMovies: action.nowPlayingMovies,
-                popularMovies: state.popularMovies
+                popularMovies: state.popularMovies,
+                moviesLiked: state.moviesLiked
             };
 
         case constants.GET_POPULAR_MOVIES:
@@ -68,7 +74,19 @@ const movieReducer = (state = {
                 movie: state.movie,
                 upcomingMovies: state.upcomingMovies,
                 nowPlayingMovies: state.nowPlayingMovies,
-                popularMovies: action.popularMovies
+                popularMovies: action.popularMovies,
+                moviesLiked: state.moviesLiked
+            };
+
+        case constants.GET_MOVIES_LIKED:
+            return {
+                movies: state.movies,
+                searchText: state.searchText,
+                movie: state.movie,
+                upcomingMovies: state.upcomingMovies,
+                nowPlayingMovies: state.nowPlayingMovies,
+                popularMovies: state.popularMovies,
+                moviesLiked: action.moviesLiked
             };
 
         default:

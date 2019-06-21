@@ -9,6 +9,12 @@ const AlertReducer = (state = {}, action) => {
         case constants.ERROR:
             alert(action.message);
             return state;
+        case constants.SET_LIKED_ALERT:
+            alert(action.message);
+            return state;
+        case constants.SET_RECOMMENDED_ALERT:
+            alert(action.message);
+            return state;
         default :
             return state;
     }
