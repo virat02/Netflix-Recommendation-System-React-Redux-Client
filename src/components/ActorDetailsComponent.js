@@ -17,26 +17,25 @@ export default class ActorDetailsComponent extends React.Component {
 
         return(
             <div className="container">
-                <h1 className="my-4">{this.props.actor.name}</h1>
+                <h1 className="my-4">{this.props.actor.actorName}</h1>
 
                 <div className="row">
 
                     <div className="col-md-6">
                         <img className="img-fluid"
-                             src={this.props.actor.image}
-                             alt="Movie Poster."/>
+                             src={this.props.actor.profilePicture}
+                             alt="Actor Profile Picture."/>
                     </div>
 
                     <div className="col-md-6">
                         <h3 className="my-3">Actor Description</h3>
-                        <p>{this.props.actor.overview}</p>
+                        <p>{this.props.actor.biography}</p>
                         <h3 className="my-3">Actor Details</h3>
-                        {/*<ul>*/}
-                        {/*    <li>Runtime: {this.props.actor.runtime}</li>*/}
-                        {/*    <li>Release Date: {this.props.actor.releaseDate}</li>*/}
-                        {/*    <li>Revenue: {this.props.actor.revenue}</li>*/}
-                        {/*    <li>Release status: {this.props.actor.releaseStatus}</li>*/}
-                        {/*</ul>*/}
+                        <ul>
+                            <li>Popularity: {this.props.actor.actorPopularity}</li>
+                            <li>Birth Date: {this.props.actor.dob}</li>
+                            <li>Wikipedia Link: {this.props.actor.imdbId}</li>
+                        </ul>
 
                         <div className="row">
                             <div className="col-sm-12 text-center">

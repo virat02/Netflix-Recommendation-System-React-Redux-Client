@@ -23,6 +23,6 @@ export default class ActorService {
 
     //Gets the details for a particular actor
     getActorDetails = actorId =>
-        fetch(baseURL + "/api/actors/" + actorId)
+        fetch(baseURL + "/api/actor/" + actorId)
             .then(response => response.json());
 }
