@@ -387,6 +387,18 @@ export const searchActorsByKeyword = (dispatch, actorName) => {
 };
 
 /**
+ * SEARCH USER METHOD
+ */
+export const searchUsersByKeyword = (dispatch, username) => {
+    userService.getUsers(username)
+        .then( users =>
+            dispatch({
+                type: constants.SEARCH_USERS,
+                users: users
+            }))
+};
+
+/**
  * METHOD TO GET ALL MOVIES REVIEWED BY A CRITIC
  */
 export const getMoviesReviewed = (dispatch, username) => {

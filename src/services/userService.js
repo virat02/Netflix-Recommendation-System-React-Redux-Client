@@ -26,4 +26,13 @@ export default class UserService {
         fetch(baseURL+"/api/follow/fan/"+username+"/criticfollowed")
             .then(response => response.json());
 
+    //Gets all users existing on the database
+    getUsers = username => {
+        if(username !== ""){
+            return fetch(baseURL+"/api/user?username="+username)
+                .then(response => response.json());
+        }
+        return fetch(baseURL+"/api/user")
+            .then(response => response.json());
+    };
 }

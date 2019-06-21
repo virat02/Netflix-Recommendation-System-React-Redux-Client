@@ -9,6 +9,6 @@ const dispatcherToPropsMapper = dispatch => ({
 
 });
 
-const MovieSearchContainer = connect(stateToPropertyMapper, dispatcherToPropsMapper)(ActorSearchComponent);
+const ActorSearchContainer = connect(stateToPropertyMapper, dispatcherToPropsMapper)(ActorSearchComponent);
 
-export default MovieSearchContainer
+export default ActorSearchContainer

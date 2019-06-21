@@ -1,29 +1,27 @@
 import * as constants from '../constants'
 
-const UserReducer = (state = {followers: [], following: [], criticsFollowed: []}, action) => {
+const defaultState = {
+    followers: [],
+    following: [],
+    criticsFollowed: [],
+    users: []
+};
+
+const UserReducer = (state = defaultState, action) => {
 
     switch (action.type) {
 
         case constants.GET_FOLLOWERS:
-            return {
-                followers: action.followers,
-                following: state.following,
-                criticsFollowed: state.criticsFollowed
-            };
+            return {...defaultState, followers: action.followers};
 
         case constants.GET_FOLLOWING:
-            return {
-                followers: state.followers,
-                following: action.following,
-                criticsFollowed: state.criticsFollowed
-            };
+            return {...defaultState, following: action.following};
 
         case constants.GET_CRITICS_FOLLOWED:
-            return {
-                followers: state.followers,
-                following: state.following,
-                criticsFollowed: action.criticsFollowed
-            };
+            return {...defaultState, criticsFollowed: action.criticsFollowed};
+
+        case constants.SEARCH_USERS:
+            return {...defaultState,users: action.users};
 
         default :
             return state;

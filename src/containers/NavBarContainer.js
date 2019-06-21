@@ -12,6 +12,7 @@ export const dispatcherToPropsMapper = dispatch => ({
     searchTextChanged: newText => actions.searchTextChanged(dispatch, newText),
     searchMoviesByKeyword: movieTitle => actions.searchMoviesByKeyword(dispatch, movieTitle),
     searchActorsByKeyword: actorName => actions.searchActorsByKeyword(dispatch, actorName),
+    searchUsersByKeyword: username => actions.searchUsersByKeyword(dispatch, username),
     logOut: () => actions.logOut(dispatch),
 });
 

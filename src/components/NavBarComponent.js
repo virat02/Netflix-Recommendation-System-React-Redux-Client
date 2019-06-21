@@ -4,9 +4,15 @@ import history from "../History";
 import "../styles/NavBar.css";
 import Select from 'react-select';
 
-const searchFor = [
+const searchOptionsForAnonymous = [
     { label: "Movies", value: 1 },
     { label: "Actors", value: 2 },
+];
+
+const searchOptionsForLoggedInUser = [
+    { label: "Movies", value: 1 },
+    { label: "Actors", value: 2 },
+    { label: "Users", value: 3 },
 ];
 
 export default class NavBarComponent extends Component{
@@ -90,6 +96,16 @@ export default class NavBarComponent extends Component{
                                                     history.push('/actors');
                                                     this.props.searchActorsByKeyword(this.props.searchText);
                                                 }
+                                                else  if(this.state.searchValue === "Users") {
+                                                    history.push('/users');
+                                                    this.props.searchUsersByKeyword(this.props.searchText)
+                                                }
+                                            }
+                                            else{
+                                                if(this.state.searchValue === "Users") {
+                                                    history.push('/users');
+                                                    this.props.searchUsersByKeyword(this.props.searchText)
+                                                }
                                             }
                                         }}>
                                     <span className={"text-center wbdv-search-btn-text"}>
@@ -99,7 +115,8 @@ export default class NavBarComponent extends Component{
                         </div>
                     </div>
                     <div className="col-md-2">
-                        <Select options={searchFor}
+                        <Select options={ this.props.localUsername === null ?
+                                            searchOptionsForAnonymous : searchOptionsForLoggedInUser}
                                 onChange={opt => this.changeSearchType(opt.label)}/>
                     </div>
                     <div className="col-md-4">

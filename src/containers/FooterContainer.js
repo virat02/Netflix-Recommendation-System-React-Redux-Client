@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import FooterComponent from "../components/footerComponent";
+import FooterComponent from "../components/FooterComponent";
 
 const FooterContainer = connect()(FooterComponent);
 
