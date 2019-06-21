@@ -1,21 +1,21 @@
 import React from 'react';
 import MovieSearchCardComponent from "./MovieSearchCardComponent";
 
-export default class MovieLikeComponent extends React.Component {
+export default class MovieReviewComponent extends React.Component {
 
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
-        this.props.getMoviesLiked(this.props.match.params.username);
+        this.props.getMoviesReviewed(this.props.match.params.username);
     }
 
     render() {
         return (
             <div className="row">
                 {
-                    this.props.moviesLiked.map(movie =>
+                    this.props.moviesReviewed.map(movie =>
                         <MovieSearchCardComponent
                             className="col-2"
                             getMovieDetails = {this.props.getMovieDetails}

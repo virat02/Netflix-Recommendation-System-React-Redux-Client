@@ -362,6 +362,9 @@ export const getMoviesLiked = (dispatch, username) => {
             }))
 };
 
+/**
+ * SEARCH ACTOR METHOD
+ */
 export const searchActorsByKeyword = (dispatch, actorName) => {
     actorService.getActors(actorName)
         .then(actors =>
@@ -370,6 +373,93 @@ export const searchActorsByKeyword = (dispatch, actorName) => {
                 actors: actors
             }))
 };
+
+/**
+ * METHOD TO GET ALL MOVIES REVIEWED BY A CRITIC
+ */
+export const getMoviesReviewed = (dispatch, username) => {
+    movieService.getMoviesReviewed(username)
+        .then(moviesReviewed =>
+            dispatch({
+                type: constants.GET_MOVIES_REVIEWED,
+                moviesReviewed: moviesReviewed
+            }))
+};
+
+/**
+ * METHOD TO GET ALL MOVIES RECOMMENDED BY A CRITIC
+ */
+export const getMoviesRecommended = (dispatch, username) => {
+    movieService.getMoviesRecommended(username)
+        .then(moviesRecommended =>
+            dispatch({
+                type:constants.GET_MOVIES_RECOMMENDED,
+                moviesRecommended: moviesRecommended
+            }))
+};
+
+/**
+ * METHOD TO SET FOLLOWER PILL ACTIVE
+ */
+export const activeFollowerPill = dispatch =>
+    dispatch({
+       type: constants.ACTIVATE_FOLLOWERS_PILL,
+       setFollowerPill: true
+    });
+
+/**
+ * METHOD TO SET FAN FOLLOWING PILL ACTIVE
+ */
+export const activeFanFollowingPill = dispatch =>
+    dispatch({
+        type: constants.ACTIVATE_FAN_FOLLOWING_PILL,
+        setFanFollowingPill: true
+    });
+
+/**
+ * METHOD TO SET CRITIC FOLLOWING PILL ACTIVE
+ */
+export const activeCriticFollowingPill = dispatch =>
+    dispatch({
+        type: constants.ACTIVATE_CRITIC_FOLLOWING_PILL,
+        setCriticFollowingPill: true
+    });
+
+/**
+ * METHOD TO SET ACTOR FOLLOWING PILL ACTIVE
+ */
+export const activeActorFollowingPill = dispatch =>
+    dispatch({
+        type: constants.ACTIVATE_ACTOR_FOLLOWING_PILL,
+        setActorFollowingPill: true
+    });
+
+/**
+ * METHOD TO SET MOVIE LIKE PILL ACTIVE
+ */
+export const activeMovieLikePill = dispatch =>
+    dispatch({
+        type: constants.ACTIVATE_MOVIE_LIKE_PILL,
+        setMovieLikePill: true
+    });
+
+/**
+ * METHOD TO SET MOVIE REVIEW PILL ACTIVE
+ */
+export const activeMovieReviewPill = dispatch =>
+    dispatch({
+        type: constants.ACTIVATE_MOVIE_REVIEW_PILL,
+        setMovieReviewPill: true
+    });
+
+/**
+ * METHOD TO SET MOVIE RECOMMEND PILL ACTIVE
+ */
+export const activeMovieRecommendPill = dispatch =>
+    dispatch({
+        type: constants.ACTIVATE_MOVIE_RECOMMEND_PILL,
+        setMovieRecommendPill: true
+    });
 
 
 

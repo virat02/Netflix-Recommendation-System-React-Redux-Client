@@ -3,7 +3,7 @@ import FollowerComponent from "../components/FollowerComponent";
 import * as actions from "../actions";
 
 const stateToPropertyMapper = state => ({
-    followers: state.UserReducer.followers,
+    followers: state.UserReducer.followers
 });
 
 export const dispatcherToPropsMapper = dispatch => ({

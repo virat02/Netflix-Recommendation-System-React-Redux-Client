@@ -8,6 +8,7 @@ import MoviesReducer from './movieReducer';
 import ModalReducer from './ModalReducer';
 import UserReducer from './UserReducer';
 import ActorReducer from './ActorReducer';
+import ActivatePillReducer from "./ActivatePillReducer";
 
 const RootReducer = combineReducers({
     LoginReducer,
@@ -17,7 +18,8 @@ const RootReducer = combineReducers({
     MoviesReducer,
     ModalReducer,
     UserReducer,
-    ActorReducer
+    ActorReducer,
+    ActivatePillReducer
 });
 
 export default RootReducer;

@@ -1,3 +1,5 @@
+import userService from "./userService";
+
 let singleton = null;
 let movies = {};
 let baseURL = "http://localhost:8080";
@@ -60,6 +62,15 @@ export default class MovieService {
     //Get Movies Liked
     getMoviesLiked = username =>
         fetch(baseURL+"/api/like/fan/"+username+"/moviesliked")
-            .then(response => response.json())
+            .then(response => response.json());
 
+    //Get Movies reviewed
+    getMoviesReviewed = username =>
+        fetch(baseURL+"/api/review/critic/"+username+"/reviewedmovies")
+            .then(response => response.json());
+
+    //Get Movies recommended
+    getMoviesRecommended = username =>
+        fetch(baseURL+"/api/recommend/critic/"+username+"/recommendedmovies")
+            .then(response => response.json());
 }

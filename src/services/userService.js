@@ -13,12 +13,21 @@ export default class UserService {
 
     //Get followers
     getFollowers = username =>
-        fetch(baseURL+"/api/follow/fan/"+username+"/fansfollowing")
+        fetch(baseURL+"/api/follow/fan/"+username+"/followedby")
             .then(response => response.json());
 
     //Get following
-    getFollowing = username =>
-        fetch(baseURL+"/api/follow/fan/"+username+"/followedby")
-            .then(response => response.json())
+    getFollowing = (username, userRole) =>{
+        if(userRole === "Fan"){
+            return fetch(baseURL+"/api/follow/fan/"+username+"/fansfollowing")
+                .then(response => response.json())
+        }
+        else {
+            return fetch(baseURL+"/api/follow/critic/"+username+"/fansfollowing")
+                .then(response => response.json())
+        }
+
+    }
+
 
 }
