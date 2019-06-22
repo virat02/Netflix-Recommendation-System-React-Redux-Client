@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-export default class ActorCardComponent extends React.Component {
+export default class ActorSearchCardComponent extends React.Component {
 
     constructor(props) {
         super(props);
@@ -19,14 +19,6 @@ export default class ActorCardComponent extends React.Component {
                             {this.props.actor.actorName}
                         </Link>
                     </div>
-                    {
-                       this.props.currentUsername === localStorage.getItem("username") &&
-                           <div className="remove-button">
-                               <Link to={`/actor/${this.props.actor.actorId}`}>
-                                   Remove
-                               </Link>
-                           </div>
-                    }
                 </div>
             </div>
         );

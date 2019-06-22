@@ -1,5 +1,6 @@
 import React from 'react';
 import ActorCardComponent from "./ActorCardComponent";
+import "../styles/actorCard.css";
 
 export default class ActorListComponent extends React.Component {
 
@@ -21,6 +22,7 @@ export default class ActorListComponent extends React.Component {
                             className="col-2"
                             getActorDetails = {this.props.getActorDetails}
                             actor={actor}
+                            currentUsername = {this.props.match.params.username}
                             key={actor.actorId}/>)
                 }
             </div>

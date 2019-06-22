@@ -3,7 +3,7 @@ import ActorListComponent from "../components/ActorListComponent";
 import * as actions from "../actions";
 
 const stateToPropertyMapper = state => ({
-    actorsFollowed: state.ActorReducer.actorsFollowed,
+    actorsFollowed: state.ActorReducer.actorsFollowed
 });
 
 export const dispatcherToPropsMapper = dispatch => ({

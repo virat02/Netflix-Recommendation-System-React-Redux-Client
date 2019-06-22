@@ -81,8 +81,6 @@ export default class UserProfileComponent extends React.Component {
 
     render() {
 
-        let followerText;
-
         return (
             <div className="container">
                 <div>

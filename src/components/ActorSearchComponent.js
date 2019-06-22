@@ -1,5 +1,5 @@
 import React from 'react';
-import ActorCardComponent from "./ActorCardComponent";
+import ActorSearchCardComponent from "./ActorSearchCardComponent";
 import "../styles/actorCard.css";
 
 export default class ActorSearchComponent extends React.Component {
@@ -13,7 +13,7 @@ export default class ActorSearchComponent extends React.Component {
             <div className="row">
                 {
                     this.props.actors.map(actor =>
-                        <ActorCardComponent
+                        <ActorSearchCardComponent
                             className="col-2"
                             getActorDetails = {this.props.getActorDetails}
                             actor={actor}

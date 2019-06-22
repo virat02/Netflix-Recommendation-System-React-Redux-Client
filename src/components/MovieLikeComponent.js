@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieSearchCardComponent from "./MovieSearchCardComponent";
+import MovieListCardComponent from "./MovieListCardComponent";
 
 export default class MovieLikeComponent extends React.Component {
 
@@ -16,10 +16,11 @@ export default class MovieLikeComponent extends React.Component {
             <div className="row">
                 {
                     this.props.moviesLiked.map(movie =>
-                        <MovieSearchCardComponent
+                        <MovieListCardComponent
                             className="col-2"
                             getMovieDetails = {this.props.getMovieDetails}
                             movie={movie}
+                            currentUsername = {this.props.match.params.username}
                             key={movie.id}/>)
                 }
             </div>
