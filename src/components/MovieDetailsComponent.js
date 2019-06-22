@@ -41,7 +41,8 @@ export default class MovieDetailsComponent extends React.Component {
                             <div className="col-sm-12 text-center">
                                 {
                                     this.props.localRole === "Fan" &&
-                                    <button id="btnLike" className="btn btn-primary btn-md center-block"
+                                    <button id="btnLike"
+                                            className="btn btn-info btn-md center-block movie-details-btn"
                                             onClick={() => this.props.likeMovie(this.props.movie.id,
                                                 this.props.localUsername)}>
                                         Like
@@ -49,7 +50,8 @@ export default class MovieDetailsComponent extends React.Component {
                                 }
                                 {
                                     this.props.localRole === "Critic" &&
-                                    <button id="btnRecommend" className="btn btn-success btn-md"
+                                    <button id="btnRecommend"
+                                            className="btn btn-success btn-md movie-details-btn"
                                             onClick={() => this.props.recommendMovie(this.props.movie.id,
                                                 this.props.localUsername)}>
                                         Recommend
@@ -59,7 +61,8 @@ export default class MovieDetailsComponent extends React.Component {
                                 {
                                     this.props.localRole === "Critic" &&
                                     <Link to={`/movie/review/${this.props.movie.id}`}>
-                                        <button id="btnReview" className="btn btn-info btn-md">
+                                        <button id="btnReview"
+                                                className="btn btn-info btn-md movie-details-btn">
                                             Review
                                         </button>
                                     </Link>

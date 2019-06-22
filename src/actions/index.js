@@ -279,18 +279,6 @@ export const likeMovie = (dispatch, movieId, username) => {
             }))
 };
 
-// /**
-//  * REVIEW A MOVIE METHOD
-//  */
-// export const reviewMovie = (dispatch, movieId, username) => {
-//     movieService.reviewMovie(movieId, username)
-//         .then(() =>
-//             dispatch({
-//                 type:constants.SET_REVIEWED_ALERT,
-//             })
-//         )
-// };
-
 /**
  * RECOMMEND A MOVIE METHOD
  */
@@ -609,6 +597,19 @@ export const removeRecommendedMovieFromList = (dispatch, movieId, username) => {
             });
 
             return getMoviesRecommended(dispatch, username);
+            }
+        )
+};
+
+export const removeReviewedMovieFromList = (dispatch, movieId, username) => {
+    movieService.deleteReviewedMovie(movieId, username)
+        .then(() => {
+            dispatch({
+                type:constants.SET_DELETE_RECOMMENDED_MOVIE_ALERT,
+                message: "Removed movie from list!"
+            });
+
+            return getMoviesReviewed(dispatch, username);
             }
         )
 };

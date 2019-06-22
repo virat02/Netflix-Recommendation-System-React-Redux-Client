@@ -7,7 +7,8 @@ const stateToPropertyMapper = state => ({
 });
 
 const dispatcherToPropsMapper = dispatch => ({
-    getMoviesReviewed: username => actions.getMoviesReviewed(dispatch, username)
+    getMoviesReviewed: username => actions.getMoviesReviewed(dispatch, username),
+    removeMovieFromList: (movieId, username) => actions.removeReviewedMovieFromList(dispatch, movieId, username)
 });
 
 const MovieReviewContainer = connect(stateToPropertyMapper, dispatcherToPropsMapper)(MovieReviewComponent);
