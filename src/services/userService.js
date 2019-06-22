@@ -82,4 +82,43 @@ export default class UserService {
             }
         })
     };
+
+    //Check if fan follows another fan
+    checkIfFanFollowsFan = (username1, username2) =>
+        fetch(baseURL+"/api/check/follow/fan1/"+username1+"/fan2/"+username2)
+            .then(response =>  response.json());
+
+    //Check if fan follows the critic
+    checkIfFanFollowsCritic = (username1, username2) =>
+        fetch(baseURL+"/api/check/follow/fan/"+username1+"/critic/"+username2)
+            .then(response =>  response.json());
+
+    //Removes a fan from the followers list
+    removeFollower = (username1, username2) => {
+        return this.getUsers(username1)
+            .then(users => {
+
+                if(users[0].dtype === "Fan"){
+
+                    //Remove fan from a fan's follower list
+                    return fetch(baseURL+"/api/remove/fan1/"+username1+"/fan2/"+username2, {
+                        method: 'post',
+                        headers: {
+                            'content-type': 'application/json'
+                        }
+                    })
+                }
+
+                //Remove fan from a critic's follower list
+                return fetch(baseURL+"/api/remove/critic/"+username1+"/fan/"+username2, {
+                    method: 'post',
+                    headers: {
+                        'content-type': 'application/json'
+                    }
+                })
+
+                }
+            )
+    };
+
 };

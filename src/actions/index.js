@@ -320,12 +320,12 @@ export const followActor = (dispatch, actorId, username) => {
  */
 export const followUser = (dispatch, username1, username2) =>
     userService.followUser(username1, username2)
-        .then(() =>
+        .then(() => {
             dispatch({
-                type:constants.SET_FOLLOWED_USER_ALERT,
-                message: "Followed the user!"
-            })
-        );
+                type: constants.SET_FOLLOWED_USER_ALERT,
+                message: "Followed "+username2
+            });
+        });
 
 /**
  * UNFOLLOW A USER METHOD
@@ -353,7 +353,21 @@ export const unfollowUser = (dispatch, username1, username2) => {
 
 };
 
+/**
+ * METHOD TO REMOVE USER FROM FOLLOWERS LIST
+ */
+export const removeFollower = (dispatch, username1, username2) => {
+    userService.removeFollower(username1, username2)
+        .then(() => {
+            dispatch({
+                type: constants.SET_REMOVE_USER_ALERT,
+                message: "Removed "+username2+" from the list"
+            });
 
+            return getFollowers(dispatch, username1);
+        })
+
+};
 
 /**
  * SHOW REVIEW MODAL METHOD

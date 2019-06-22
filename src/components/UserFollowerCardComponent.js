@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import "../styles/userCard.css";
 
-export default class UserCardComponent extends React.Component {
+export default class UserFollowerCardComponent extends React.Component {
 
     constructor(props) {
         super(props);
@@ -19,14 +19,12 @@ export default class UserCardComponent extends React.Component {
                     </Link>
                     &nbsp;
                     {
-                        this.props.user.username !== localStorage.getItem("username") &&
-                        localStorage.getItem("userRole") === "Fan" &&
-
-                            <button className="btn btn-primary"
-                                    onClick={() => this.props.followUser(localStorage.getItem("username"),
-                                                                         this.props.user.username)}>
-                                Follow
-                            </button>
+                        this.props.currentUsername === localStorage.getItem("username") &&
+                        <button className="btn btn-danger"
+                                onClick={() => this.props.removeUser(this.props.currentUsername,
+                                    this.props.user.username)}>
+                            Remove
+                        </button>
                     }
                 </div>
             </div>

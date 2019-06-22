@@ -163,7 +163,10 @@ export default class UserProfileComponent extends React.Component {
                     <Route path={"/profile/:username/moviesReviewed"} component={MovieReviewContainer}/>
                     <Route path={"/profile/:username/moviesRecommended"} component={MovieRecommendContainer}/>
                 </div>
+
+
             </div>
         );
     }
 }
+

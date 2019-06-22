@@ -1,5 +1,5 @@
 import React from 'react';
-import UserListCardComponent from "./UserListCardComponent";
+import UserFollowerCardComponent from "./UserFollowerCardComponent";
 
 export default class FollowerComponent extends React.Component {
 
@@ -16,10 +16,11 @@ export default class FollowerComponent extends React.Component {
             <div className="row">
                 {
                     this.props.followers.map(follower =>
-                        <UserListCardComponent
+                        <UserFollowerCardComponent
                             className="col-2"
                             user={follower}
-                            unfollowUser = {this.props.unfollowUser}
+                            currentUsername = {this.props.match.params.username}
+                            removeUser = {this.props.removeUser}
                             key={follower.username}/>
                     )
                 }

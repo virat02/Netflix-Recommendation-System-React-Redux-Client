@@ -9,6 +9,7 @@ import ModalReducer from './ModalReducer';
 import UserReducer from './UserReducer';
 import ActorReducer from './ActorReducer';
 import ActivatePillReducer from "./ActivatePillReducer";
+import ButtonReducer from "./ButtonReducer";
 
 const RootReducer = combineReducers({
     LoginReducer,
@@ -19,7 +20,8 @@ const RootReducer = combineReducers({
     ModalReducer,
     UserReducer,
     ActorReducer,
-    ActivatePillReducer
+    ActivatePillReducer,
+    ButtonReducer
 });
 
 export default RootReducer;
