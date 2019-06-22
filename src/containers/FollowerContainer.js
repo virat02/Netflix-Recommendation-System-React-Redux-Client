@@ -8,7 +8,7 @@ const stateToPropertyMapper = state => ({
 });
 
 export const dispatcherToPropsMapper = dispatch => ({
-    getFollowers: (username, userRole) => actions.getFollowers(dispatch, username, userRole),
+    getFollowers: (username) => actions.getFollowers(dispatch, username),
 });
 
 const FollowerContainer = connect(stateToPropertyMapper,dispatcherToPropsMapper)(FollowerComponent);

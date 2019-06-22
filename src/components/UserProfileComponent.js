@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Link} from "react-router-dom";
 
 import FollowerContainer from "../containers/FollowerContainer";
-import FollowingContainer from "../containers/FollowingContainer";
+import FanFollowingContainer from "../containers/FanFollowingContainer";
 import ActorListContainer from "../containers/ActorListContainer";
 import MoviesLikeContainer from "../containers/MoviesLikeContainer";
 import MovieReviewContainer from "../containers/MovieReviewContainer";
@@ -18,7 +18,14 @@ export default class UserProfileComponent extends React.Component {
         super(props);
 
         this.state = {
-            userView: ''
+            userView: '',
+            followerText: '',
+            fanFollowingText: '',
+            criticFollowingText: '',
+            actorsFollowedText: '',
+            moviesLikedText: '',
+            moviesReviewedText: '',
+            moviesRecommendedText: ''
         }
     }
 
@@ -26,7 +33,22 @@ export default class UserProfileComponent extends React.Component {
         userService.getUsers(this.props.match.params.username)
             .then(user => {
                 this.setState({
-                    userView: user[0]
+                    userView: user[0],
+                    followerText: user[0].username === this.props.localUsername ?
+                                    "Your Followers" : user[0].firstName+"'s Followers",
+                    fanFollowingText: user[0].username === this.props.localUsername ?
+                                    "Fans You Follow" : "Fans "+user[0].firstName+" Followed",
+                    criticFollowingText: user[0].username === this.props.localUsername ?
+                                    "Critics You Follow" : "Critics "+user[0].firstName+" Followed",
+                    actorsFollowedText: user[0].username === this.props.localUsername ?
+                        "Actors You Follow" : "Actors "+user[0].firstName+" Followed",
+                    moviesLikedText: user[0].username === this.props.localUsername ?
+                        "Movies You Like" : "Movies "+user[0].firstName+" Liked",
+                    moviesReviewedText: user[0].username === this.props.localUsername ?
+                        "Movies You Reviewed" : "Movies "+user[0].firstName+" Reviewed",
+                    moviesRecommendedText: user[0].username === this.props.localUsername ?
+                        "Movies You Recommended" : "Movies "+user[0].firstName+" Recommended",
+
                 })
             });
     }
@@ -37,13 +59,29 @@ export default class UserProfileComponent extends React.Component {
             userService.getUsers(nextProps.match.params.username)
                 .then(user => {
                     this.setState({
-                        userView: user[0]
+                        userView: user[0],
+                        followerText: user[0].username === this.props.localUsername ?
+                            "Your Followers" : user[0].firstName+"'s Followers",
+                        fanFollowingText: user[0].username === this.props.localUsername ?
+                            "Fans You Follow" : "Fans "+user[0].firstName+" Followed",
+                        criticFollowingText: user[0].username === this.props.localUsername ?
+                            "Critics You Follow" : "Critics "+user[0].firstName+" Followed",
+                        actorsFollowedText: user[0].username === this.props.localUsername ?
+                            "Actors You Follow" : "Actors "+user[0].firstName+" Followed",
+                        moviesLikedText: user[0].username === this.props.localUsername ?
+                            "Movies You Like" : "Movies "+user[0].firstName+" Liked",
+                        moviesReviewedText: user[0].username === this.props.localUsername ?
+                            "Movies You Reviewed" : "Movies "+user[0].firstName+" Reviewed",
+                        moviesRecommendedText: user[0].username === this.props.localUsername ?
+                            "Movies You Recommended" : "Movies "+user[0].firstName+" Recommended",
                     })
                 });
         }
     }
 
     render() {
+
+        let followerText;
 
         return (
             <div className="container">
@@ -53,7 +91,7 @@ export default class UserProfileComponent extends React.Component {
                             onClick={ this.props.activeFollowerPill}>
                             <Link to={`/profile/${this.state.userView.username}/followers`}
                                className={this.props.setFollowerPill ? "nav-link active" : "nav-link"} >
-                                {this.state.userView.firstName}'s Followers
+                                {this.state.followerText}
                             </Link>
                         </li>
                         {
@@ -62,7 +100,7 @@ export default class UserProfileComponent extends React.Component {
                                 onClick={this.props.activeFanFollowingPill}>
                                 <Link to={`/profile/${this.state.userView.username}/fan/following`}
                                       className={this.props.setFanFollowingPill ? "nav-link active" : "nav-link"}>
-                                    Fans {this.state.userView.firstName} Followed
+                                    {this.state.fanFollowingText}
                                 </Link>
                             </li>
                         }
@@ -72,7 +110,7 @@ export default class UserProfileComponent extends React.Component {
                               onClick={this.props.activeCriticFollowingPill}>
                               <Link to={`/profile/${this.state.userView.username}/critic/following`}
                                     className={this.props.setCriticFollowingPill ? "nav-link active" : "nav-link"}>
-                                  Critics {this.state.userView.firstName} Followed
+                                  {this.state.criticFollowingText}
                               </Link>
                           </li>
                         }
@@ -82,7 +120,7 @@ export default class UserProfileComponent extends React.Component {
                                 onClick={this.props.activeActorFollowingPill}>
                                 <Link to={`/profile/${this.state.userView.username}/actorsFollowed`}
                                       className={this.props.setActorFollowingPill ? "nav-link active" : "nav-link"}>
-                                    List Of Actors {this.state.userView.firstName} Followed
+                                    {this.state.actorsFollowedText}
                                 </Link>
                             </li>
                         }
@@ -92,7 +130,7 @@ export default class UserProfileComponent extends React.Component {
                                 onClick={this.props.activeMoviesLikePill}>
                                 <Link to={`/profile/${this.state.userView.username}/moviesLiked`}
                                       className={this.props.setMoviesLikePill ? "nav-link active" : "nav-link"}>
-                                    List Of Movies {this.state.userView.firstName} Liked
+                                    {this.state.moviesLikedText}
                                 </Link>
                             </li>
                         }
@@ -102,7 +140,7 @@ export default class UserProfileComponent extends React.Component {
                                 onClick={this.props.activeMoviesReviewPill}>
                                 <Link to={`/profile/${this.state.userView.username}/moviesReviewed`}
                                       className={this.props.setMoviesReviewPill ? "nav-link active" : "nav-link"}>
-                                    List Of Movies {this.state.userView.firstName} Reviewed
+                                    {this.state.moviesReviewedText}
                                 </Link>
                             </li>
                         }
@@ -113,14 +151,14 @@ export default class UserProfileComponent extends React.Component {
                                 <Link to={`/profile/${this.state.userView.username}/moviesRecommended`}
                                       className={this.props.setMoviesRecommendPill ?
                                           "nav-link active" : "nav-link"}>
-                                    List Of Movies {this.state.userView.firstName} Recommended
+                                    {this.state.moviesRecommendedText}
                                 </Link>
                             </li>
                         }
                     </ul>
 
                     <Route exact path={"/profile/:username/followers"} component={FollowerContainer}/>
-                    <Route exact path={"/profile/:username/fan/following"} component={FollowingContainer}/>
+                    <Route exact path={"/profile/:username/fan/following"} component={FanFollowingContainer}/>
                     <Route exact path={"/profile/:username/critic/following"} component={CriticsFollowingContainer}/>
                     <Route exact path={"/profile/:username/actorsFollowed"} component={ActorListContainer}/>
                     <Route path={"/profile/:username/moviesLiked"} component={MoviesLikeContainer}/>

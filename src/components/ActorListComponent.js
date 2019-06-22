@@ -13,8 +13,6 @@ export default class ActorListComponent extends React.Component {
 
     render() {
 
-        console.log(this.props.actorsFollowed);
-
         return (
             <div className="row">
                 {

@@ -327,26 +327,75 @@ export const showReviewModal = dispatch =>
 /**
  * METHOD TO GET FOLLOWERS
  */
-export const getFollowers = (dispatch, username, userRole) => {
-    userService.getFollowers(username, userRole)
-        .then(followers =>
-            dispatch({
-                type: constants.GET_FOLLOWERS,
-                followers: followers
-            })
+export const getFollowers = (dispatch, username) => {
+    userService.getUsers(username)
+        .then(users =>
+                userService.getFollowers(users[0].username, users[0].dtype)
+                    .then(followers =>
+                        followers.length !== 0 ?
+
+                            dispatch({
+                                type: constants.GET_FOLLOWERS,
+                                followers: followers
+                            })
+
+                            :
+
+                            dispatch({
+                                type: constants.SET_NO_FOLLOWERS_ALERT,
+                                message: "No followers!"
+                            })
+                    )
         )
 };
 
 /**
  * METHOD TO GET FOLLOWING
  */
-export const getFollowing = (dispatch, username, userRole) => {
-    userService.getFollowing(username, userRole)
-        .then(following =>
-            dispatch({
-                type: constants.GET_FOLLOWING,
-                following: following
-            })
+export const getFollowing = (dispatch, username) => {
+
+    userService.getUsers(username)
+        .then(users =>
+                userService.getFollowing(users[0].username, users[0].dtype)
+                    .then(following =>
+                        following.length !== 0 ?
+
+                            dispatch({
+                                type: constants.GET_FOLLOWING,
+                                following: following
+                            })
+                            :
+                            dispatch({
+                                type: constants.SET_NO_FAN_FOLLOWING_ALERT,
+                                message: "No fans followed!"
+                            })
+                    )
+        )
+};
+
+/**
+ * METHOD TO GET LIST OF CRITICS FOLLOWED BY A FAN
+ */
+export const getCriticsFollowed = (dispatch, username) => {
+    userService.getUsers(username)
+        .then(users =>
+            userService.getCriticsFollowed(users[0].username)
+                .then(criticsFollowed =>
+
+                    criticsFollowed.length !== 0 ?
+
+                        dispatch({
+                            type: constants.GET_CRITICS_FOLLOWED,
+                            criticsFollowed: criticsFollowed
+                        })
+
+                        :
+
+                        dispatch({
+                            type: constants.SET_NO_CRITIC_FOLLOWING_ALERT,
+                            message: "No critics followed!"
+                        })
+                )
         )
 };
 
@@ -355,11 +404,21 @@ export const getFollowing = (dispatch, username, userRole) => {
  */
 export const getActorsFollowed = (dispatch, username) => {
     actorService.getActorsFollowed(username)
-        .then(actors =>
-            dispatch({
-                type: constants.GET_ACTORS_FOLLOWED,
-                actorsFollowed: actors
-            }))
+        .then(actorsFollowed =>
+            actorsFollowed.length !== 0 ?
+
+                dispatch({
+                    type: constants.GET_ACTORS_FOLLOWED,
+                    actorsFollowed: actorsFollowed
+                })
+
+                :
+
+                dispatch({
+                    type: constants.SET_NO_ACTORS_FOLLOWED_ALERT,
+                    message: "No actors followed!"
+                })
+        )
 };
 
 /**
@@ -367,11 +426,66 @@ export const getActorsFollowed = (dispatch, username) => {
  */
 export const getMoviesLiked = (dispatch, username) => {
     movieService.getMoviesLiked(username)
-        .then(movies =>
-            dispatch({
-                type: constants.GET_MOVIES_LIKED,
-                moviesLiked: movies
-            }))
+        .then(moviesLiked =>
+            moviesLiked.length !== 0 ?
+
+                dispatch({
+                    type: constants.GET_MOVIES_LIKED,
+                    moviesLiked: moviesLiked
+                })
+
+                :
+
+                dispatch({
+                    type: constants.SET_NO_MOVIES_LIKED_ALERT,
+                    message: "No movies liked!"
+                })
+        )
+};
+
+/**
+ * METHOD TO GET ALL MOVIES REVIEWED BY A CRITIC
+ */
+export const getMoviesReviewed = (dispatch, username) => {
+    movieService.getMoviesReviewed(username)
+        .then(moviesReviewed =>
+                moviesReviewed.length !== 0 ?
+
+                    dispatch({
+                        type: constants.GET_MOVIES_REVIEWED,
+                        moviesReviewed: moviesReviewed
+                    })
+
+                    :
+
+                    dispatch({
+                        type: constants.SET_NO_MOVIES_REVIEWED_ALERT,
+                        message: "No movies reviewed!"
+                    })
+        )
+};
+
+/**
+ * METHOD TO GET ALL MOVIES RECOMMENDED BY A CRITIC
+ */
+export const getMoviesRecommended = (dispatch, username) => {
+    movieService.getMoviesRecommended(username)
+        .then(moviesRecommended =>
+                moviesRecommended.length !== 0 ?
+
+                dispatch({
+                    type: constants.GET_MOVIES_RECOMMENDED,
+                    moviesRecommended: moviesRecommended
+                })
+
+                :
+
+                dispatch({
+                    type: constants.SET_NO_MOVIES_RECOMMENDED_ALERT,
+                    message: "No movies recommended!"
+                })
+
+        )
 };
 
 /**
@@ -395,30 +509,6 @@ export const searchUsersByKeyword = (dispatch, username) => {
             dispatch({
                 type: constants.SEARCH_USERS,
                 users: users
-            }))
-};
-
-/**
- * METHOD TO GET ALL MOVIES REVIEWED BY A CRITIC
- */
-export const getMoviesReviewed = (dispatch, username) => {
-    movieService.getMoviesReviewed(username)
-        .then(moviesReviewed =>
-            dispatch({
-                type: constants.GET_MOVIES_REVIEWED,
-                moviesReviewed: moviesReviewed
-            }))
-};
-
-/**
- * METHOD TO GET ALL MOVIES RECOMMENDED BY A CRITIC
- */
-export const getMoviesRecommended = (dispatch, username) => {
-    movieService.getMoviesRecommended(username)
-        .then(moviesRecommended =>
-            dispatch({
-                type:constants.GET_MOVIES_RECOMMENDED,
-                moviesRecommended: moviesRecommended
             }))
 };
 
@@ -484,18 +574,6 @@ export const activeMovieRecommendPill = dispatch =>
         type: constants.ACTIVATE_MOVIE_RECOMMEND_PILL,
         setMovieRecommendPill: true
     });
-
-/**
- * METHOD TO GET LIST OF CRITICS FOLLOWED BY A FAN
- */
-export const getCriticsFollowed = (dispatch, username) => {
-    userService.getCriticsFollowed(username)
-        .then(criticsFollowed =>
-            dispatch({
-                type: constants.GET_CRITICS_FOLLOWED,
-                criticsFollowed: criticsFollowed
-            }))
-};
 
 /**
  * ACTOR DETAILS METHOD
