@@ -20,6 +20,7 @@ export default class MovieRecommendComponent extends React.Component {
                             className="col-2"
                             getMovieDetails = {this.props.getMovieDetails}
                             currentUsername = {this.props.match.params.username}
+                            removeMovieFromList = {this.props.removeMovieFromList}
                             movie={movie}
                             key={movie.id}/>)
                 }

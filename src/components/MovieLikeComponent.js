@@ -19,6 +19,7 @@ export default class MovieLikeComponent extends React.Component {
                         <MovieListCardComponent
                             className="col-2"
                             getMovieDetails = {this.props.getMovieDetails}
+                            removeMovieFromList = {this.props.removeMovieFromList}
                             movie={movie}
                             currentUsername = {this.props.match.params.username}
                             key={movie.id}/>)

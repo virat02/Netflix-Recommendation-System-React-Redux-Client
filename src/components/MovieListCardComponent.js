@@ -22,9 +22,11 @@ export default class MovieListCardComponent extends React.Component {
                     {
                         this.props.currentUsername === localStorage.getItem("username") &&
                         <div className="remove-button">
-                            <Link to={`/movie/${this.props.movie.id}`}>
+                            <button className="btn btn-danger"
+                                    onClick={() => this.props.removeMovieFromList(this.props.movie.id,
+                                                                                  this.props.currentUsername)}>
                                 Remove
-                            </Link>
+                            </button>
                         </div>
                     }
                 </div>

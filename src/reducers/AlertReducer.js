@@ -1,10 +1,4 @@
 import * as constants from '../constants'
-import {SET_NO_FAN_FOLLOWING_ALERT} from "../constants";
-import {SET_NO_CRITIC_FOLLOWING_ALERT} from "../constants";
-import {SET_NO_ACTORS_FOLLOWED_ALERT} from "../constants";
-import {SET_NO_MOVIES_LIKED_ALERT} from "../constants";
-import {SET_NO_MOVIES_REVIEWED_ALERT} from "../constants";
-import {SET_NO_MOVIES_RECOMMENDED_ALERT} from "../constants";
 
 const AlertReducer = (state = {}, action) => {
 
@@ -15,12 +9,14 @@ const AlertReducer = (state = {}, action) => {
         case constants.SET_RECOMMENDED_ALERT:
         case constants.SET_FOLLOWED_ALERT:
         case constants.SET_NO_FOLLOWERS_ALERT:
-        case SET_NO_FAN_FOLLOWING_ALERT:
-        case SET_NO_CRITIC_FOLLOWING_ALERT:
-        case SET_NO_ACTORS_FOLLOWED_ALERT:
-        case SET_NO_MOVIES_LIKED_ALERT:
-        case SET_NO_MOVIES_REVIEWED_ALERT:
-        case SET_NO_MOVIES_RECOMMENDED_ALERT:
+        case constants.SET_NO_FAN_FOLLOWING_ALERT:
+        case constants.SET_NO_CRITIC_FOLLOWING_ALERT:
+        case constants.SET_NO_ACTORS_FOLLOWED_ALERT:
+        case constants.SET_NO_MOVIES_LIKED_ALERT:
+        case constants.SET_NO_MOVIES_REVIEWED_ALERT:
+        case constants.SET_NO_MOVIES_RECOMMENDED_ALERT:
+        case constants.SET_DELETE_RECOMMENDED_MOVIE_ALERT:
+        case constants.SET_DELETE_LIKED_MOVIE_ALERT:
             alert(action.message);
             return state;
         default :

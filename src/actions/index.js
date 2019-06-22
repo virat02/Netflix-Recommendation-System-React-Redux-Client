@@ -427,18 +427,9 @@ export const getActorsFollowed = (dispatch, username) => {
 export const getMoviesLiked = (dispatch, username) => {
     movieService.getMoviesLiked(username)
         .then(moviesLiked =>
-            moviesLiked.length !== 0 ?
-
-                dispatch({
+            dispatch({
                     type: constants.GET_MOVIES_LIKED,
                     moviesLiked: moviesLiked
-                })
-
-                :
-
-                dispatch({
-                    type: constants.SET_NO_MOVIES_LIKED_ALERT,
-                    message: "No movies liked!"
                 })
         )
 };
@@ -471,20 +462,10 @@ export const getMoviesReviewed = (dispatch, username) => {
 export const getMoviesRecommended = (dispatch, username) => {
     movieService.getMoviesRecommended(username)
         .then(moviesRecommended =>
-                moviesRecommended.length !== 0 ?
-
                 dispatch({
                     type: constants.GET_MOVIES_RECOMMENDED,
                     moviesRecommended: moviesRecommended
                 })
-
-                :
-
-                dispatch({
-                    type: constants.SET_NO_MOVIES_RECOMMENDED_ALERT,
-                    message: "No movies recommended!"
-                })
-
         )
 };
 
@@ -586,6 +567,40 @@ export const getActorDetails = (dispatch, actorId) => {
                 actor: actor
             }))
 };
+
+/**
+ * DELETE RECOMMENDED MOVIE FROM LIST
+ */
+export const removeRecommendedMovieFromList = (dispatch, movieId, username) => {
+    movieService.deleteRecommendedMovie(movieId, username)
+        .then(() => {
+            dispatch({
+                type:constants.SET_DELETE_RECOMMENDED_MOVIE_ALERT,
+                message: "Removed movie from list!"
+            });
+
+            return getMoviesRecommended(dispatch, username);
+            }
+        )
+};
+
+/**
+ * DELETE LIKED MOVIE FROM LIST
+ */
+export const removeLikedMovieFromList = (dispatch, movieId, username) => {
+    movieService.deleteLikedMovie(movieId, username)
+        .then(() => {
+                dispatch({
+                    type:constants.SET_DELETE_LIKED_MOVIE_ALERT,
+                    message: "Removed liked movie from list!"
+                });
+
+                return getMoviesLiked(dispatch, username);
+            }
+        )
+};
+
+
 
 
 

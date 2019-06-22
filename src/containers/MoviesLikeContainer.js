@@ -7,7 +7,8 @@ const stateToPropertyMapper = state => ({
 });
 
 const dispatcherToPropsMapper = dispatch => ({
-    getMoviesLiked: username => actions.getMoviesLiked(dispatch, username)
+    getMoviesLiked: username => actions.getMoviesLiked(dispatch, username),
+    removeMovieFromList: (movieId, username) => actions.removeLikedMovieFromList(dispatch, movieId, username)
 });
 
 const MoviesLikeContainer = connect(stateToPropertyMapper, dispatcherToPropsMapper)(MovieLikeComponent);
