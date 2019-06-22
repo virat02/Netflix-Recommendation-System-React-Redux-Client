@@ -22,9 +22,11 @@ export default class ActorCardComponent extends React.Component {
                     {
                        this.props.currentUsername === localStorage.getItem("username") &&
                            <div className="remove-button">
-                               <Link to={`/actor/${this.props.actor.actorId}`}>
+                               <button className="btn btn-danger"
+                                       onClick={() => this.props.removeActorFromList(this.props.actor.actorId,
+                                                                                     this.props.currentUsername)}>
                                    Remove
-                               </Link>
+                               </button>
                            </div>
                     }
                 </div>

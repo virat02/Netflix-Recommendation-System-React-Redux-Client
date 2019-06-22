@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5c17363f-c748-4ea4-80cf-7edf5189d76f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MovieLikeComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MovieLikeComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MovieListCardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MovieListCardComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MovieRecommendComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MovieRecommendComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ActorCardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ActorCardComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ActorListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ActorListComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/MovieRecommendContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MovieRecommendContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/MoviesLikeContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MoviesLikeContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ActorListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ActorListContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/AlertReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/AlertReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/actorService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/actorService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/movieService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/movieService.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,22 +35,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/MoviesLikeContainer.js">
+        <entry file="file://$PROJECT_DIR$/src/components/UserProfileComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="80" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="80" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/MovieLikeComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="82" selection-start-line="21" selection-start-column="82" selection-end-line="21" selection-end-column="82" />
+            <state relative-caret-position="107">
+              <caret line="150" column="74" lean-forward="true" selection-start-line="150" selection-start-column="74" selection-end-line="150" selection-end-column="74" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -60,10 +47,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/MovieRecommendContainer.js">
+        <entry file="file://$PROJECT_DIR$/src/components/ActorListComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/ActorCardComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="25" column="74" lean-forward="true" selection-start-line="25" selection-start-column="74" selection-end-line="25" selection-end-column="74" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/ActorListContainer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="115" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="115" />
+              <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -71,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="435" lean-forward="true" selection-start-line="435" selection-end-line="435" />
+            <state relative-caret-position="179">
+              <caret line="596" column="13" selection-start-line="596" selection-start-column="13" selection-end-line="596" selection-end-column="13" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -83,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/movieService.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/services/actorService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="385">
+              <caret line="44" column="13" lean-forward="true" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -130,7 +141,6 @@
         <option value="$PROJECT_DIR$/src/components/MovieDetailsComponent.js" />
         <option value="$PROJECT_DIR$/src/containers/MovieListContainer.js" />
         <option value="$PROJECT_DIR$/src/containers/UserProfileContainer.js" />
-        <option value="$PROJECT_DIR$/src/services/actorService.js" />
         <option value="$PROJECT_DIR$/src/reducers/ActivatePillReducer.js" />
         <option value="$PROJECT_DIR$/src/reducers/UserReducer.js" />
         <option value="$PROJECT_DIR$/src/containers/NavBarContainer.js" />
@@ -152,9 +162,6 @@
         <option value="$PROJECT_DIR$/src/components/ActorSearchCardComponent.js" />
         <option value="$PROJECT_DIR$/src/components/ActorSearchComponent.js" />
         <option value="$PROJECT_DIR$/src/components/UserProfileComponent.js" />
-        <option value="$PROJECT_DIR$/src/components/ActorListComponent.js" />
-        <option value="$PROJECT_DIR$/src/containers/ActorListContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/ActorCardComponent.js" />
         <option value="$PROJECT_DIR$/src/components/MovieReviewComponent.js" />
         <option value="$PROJECT_DIR$/src/styles/movieCard.css" />
         <option value="$PROJECT_DIR$/src/components/MovieListCardComponent.js" />
@@ -162,10 +169,14 @@
         <option value="$PROJECT_DIR$/src/components/MovieRecommendComponent.js" />
         <option value="$PROJECT_DIR$/src/components/MovieLikeComponent.js" />
         <option value="$PROJECT_DIR$/src/containers/MoviesLikeContainer.js" />
-        <option value="$PROJECT_DIR$/src/constants/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/ActorListContainer.js" />
         <option value="$PROJECT_DIR$/src/services/movieService.js" />
+        <option value="$PROJECT_DIR$/src/constants/index.js" />
         <option value="$PROJECT_DIR$/src/reducers/AlertReducer.js" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/src/components/ActorListComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/ActorCardComponent.js" />
+        <option value="$PROJECT_DIR$/src/services/actorService.js" />
       </list>
     </option>
   </component>
@@ -199,6 +210,12 @@
               <item name="NetflixRecommendationSystemClient" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NetflixRecommendationSystemClient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NetflixRecommendationSystemClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NetflixRecommendationSystemClient" type="b2602c69:ProjectViewProjectNode" />
@@ -272,12 +289,12 @@
       <workItem from="1560191343513" duration="598000" />
       <workItem from="1560797255810" duration="50269000" />
       <workItem from="1561038155649" duration="14671000" />
-      <workItem from="1561068208483" duration="60178000" />
+      <workItem from="1561068208483" duration="62296000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126523000" />
+    <option name="totallyTimeSpent" value="128641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -389,13 +406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/actorService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -585,39 +595,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ActorListContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ActorListComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MovieCardComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UserProfileComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1066">
-          <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -628,16 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ActorCardComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="21" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="28" selection-end-column="21" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -695,26 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/MovieListCardComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="25" column="81" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="81" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MovieRecommendComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -747,42 +697,109 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/MoviesLikeContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="80" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="80" />
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/movieService.js">
+    <entry file="file://$PROJECT_DIR$/src/Routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="413">
+          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/AlertReducer.js">
+    <entry file="file://$PROJECT_DIR$/src/components/MovieListCardComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        <state relative-caret-position="317">
+          <caret line="28" column="37" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="28" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/movieService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="93" column="1" lean-forward="true" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/constants/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="30" column="69" lean-forward="true" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
+        <state relative-caret-position="340">
+          <caret line="38" column="44" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/AlertReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UserProfileComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="150" column="74" lean-forward="true" selection-start-line="150" selection-start-column="74" selection-end-line="150" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ActorListComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ActorCardComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="25" column="74" lean-forward="true" selection-start-line="25" selection-start-column="74" selection-end-line="25" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/ActorListContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="435" lean-forward="true" selection-start-line="435" selection-end-line="435" />
+        <state relative-caret-position="179">
+          <caret line="596" column="13" selection-start-line="596" selection-start-column="13" selection-end-line="596" selection-end-column="13" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/actorService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="44" column="13" lean-forward="true" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
         </state>
       </provider>
     </entry>

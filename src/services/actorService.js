@@ -35,4 +35,14 @@ export default class ActorService {
             }
         })
     };
+
+    //Delete an actor from the followed actor's list
+    deleteActorFromList = (actorId, username) => {
+        return fetch(baseURL+ "/api/delete/actor/fan/"+username+"/actor/"+actorId, {
+            method: 'delete',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+    };
 }

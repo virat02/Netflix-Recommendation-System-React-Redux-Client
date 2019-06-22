@@ -405,18 +405,9 @@ export const getCriticsFollowed = (dispatch, username) => {
 export const getActorsFollowed = (dispatch, username) => {
     actorService.getActorsFollowed(username)
         .then(actorsFollowed =>
-            actorsFollowed.length !== 0 ?
-
                 dispatch({
                     type: constants.GET_ACTORS_FOLLOWED,
                     actorsFollowed: actorsFollowed
-                })
-
-                :
-
-                dispatch({
-                    type: constants.SET_NO_ACTORS_FOLLOWED_ALERT,
-                    message: "No actors followed!"
                 })
         )
 };
@@ -600,7 +591,21 @@ export const removeLikedMovieFromList = (dispatch, movieId, username) => {
         )
 };
 
+/**
+ * DELETE FOLLOWED ACTOR FROM LIST
+ */
+export const removeActorFromList = (dispatch, actorId, username) => {
+    actorService.deleteActorFromList(actorId, username)
+        .then(() => {
+                dispatch({
+                    type:constants.SET_DELETE_ACTOR_FOLLOWED_ALERT,
+                    message: "Removed the followed actor from list!"
+                });
 
+                return getActorsFollowed(dispatch, username);
+            }
+        )
+};
 
 
 

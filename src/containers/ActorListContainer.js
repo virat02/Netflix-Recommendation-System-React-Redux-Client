@@ -8,6 +8,7 @@ const stateToPropertyMapper = state => ({
 
 export const dispatcherToPropsMapper = dispatch => ({
     getActorsFollowed: username => actions.getActorsFollowed(dispatch, username),
+    removeActorFromList: (actorId, username) => actions.removeActorFromList(dispatch, actorId, username)
 });
 
 const ActorListContainer = connect(stateToPropertyMapper,dispatcherToPropsMapper)(ActorListComponent);

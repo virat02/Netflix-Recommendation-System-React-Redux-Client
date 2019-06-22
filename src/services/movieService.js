@@ -84,7 +84,7 @@ export default class MovieService {
     //Delete liked movie from fan's liked movie list
     deleteLikedMovie = (movieId, username) => {
         return fetch(baseURL + "/api/delete/like/fan/"+username+"/movie/"+movieId, {
-            method: 'post',
+            method: 'delete',
             headers: {
                 'content-type': 'application/json'
             }
