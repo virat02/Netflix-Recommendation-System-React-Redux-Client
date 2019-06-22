@@ -34,7 +34,7 @@ export default class LoginComponent extends Component {
 
         return (
             <div className="container-login container-fluid">
-                <div className={"card container wbdv-login-container"}>
+                <div className="card container wbdv-login-container logincard">
                     <form>
                         {
                             this.state.errorMessageFld!=='' &&

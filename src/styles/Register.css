@@ -1,6 +1,5 @@
 .container-register {
-    padding-top: 56px;
-    /*background-image: url("../images/loginBg.jpg");*/
+    padding-top: 0px;
     height:100%;
 }
 
@@ -15,4 +14,12 @@
 
 .wbdv-links {
     padding-bottom: 10px;
+}
+
+.registercard {
+    background-color: black !important;
+}
+
+.container {
+    margin-top: 0px !important;
 }

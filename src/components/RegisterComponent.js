@@ -46,7 +46,7 @@ export default class Register extends Component {
 
         return (
             <div className="container-register">
-                <div className={"card container wbdv-register-container"}>
+                <div className="card container wbdv-register-container registercard">
                     <form>
                         {this.state.errorMessageFld!=='' &&
                         <span>

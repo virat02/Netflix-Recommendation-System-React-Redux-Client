@@ -1,3 +1,32 @@
 .card-body{
-    color: black;
+    color: white;
+}
+
+.usercard {
+    background-color: #212529 !important;
+    width: max-content !important;
+}
+
+.user-btn-primary {
+    background-color: black !important;
+    opacity: 0.4% !important;
+    border-color: white !important;
+}
+
+.user-btn {
+    width: unset;
+}
+
+.user-btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff !important;
+    background-color: #00b3db !important;
+    border-color: #285e8e !important;
+}
+
+.row {
+    margin-left: 10px !important;
+}
+
+.no-border {
+    border: none !important;
 }
