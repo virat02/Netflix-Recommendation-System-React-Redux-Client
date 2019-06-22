@@ -457,19 +457,10 @@ export const getMoviesLiked = (dispatch, username) => {
 export const getMoviesReviewed = (dispatch, username) => {
     movieService.getMoviesReviewed(username)
         .then(moviesReviewed =>
-                moviesReviewed.length !== 0 ?
-
-                    dispatch({
-                        type: constants.GET_MOVIES_REVIEWED,
-                        moviesReviewed: moviesReviewed
-                    })
-
-                    :
-
-                    dispatch({
-                        type: constants.SET_NO_MOVIES_REVIEWED_ALERT,
-                        message: "No movies reviewed!"
-                    })
+            dispatch({
+                type: constants.GET_MOVIES_REVIEWED,
+                moviesReviewed: moviesReviewed
+            })
         )
 };
 

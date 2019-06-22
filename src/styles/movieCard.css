@@ -74,8 +74,30 @@ img {
     z-index: 1;
 }
 
+.edit-button {
+    position: absolute;
+    display: inline;
+    width: 300px;
+    left:0;
+    top: 100px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+}
+
+.edit-button a {
+    width: 200px;
+    padding: 12px 48px;
+    text-align: center;
+    color: white;
+    background-color: #555555;
+    border: solid 2px white;
+    z-index: 1;
+}
+
 .movie-card:hover .button,
-.movie-card:hover .remove-button {
+.movie-card:hover .remove-button,
+.movie-card:hover .edit-button{
     opacity: 1;
 }
 

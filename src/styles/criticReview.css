@@ -1,0 +1,24 @@
+.text-area-width
+{
+    width: 100%;
+    border-radius: 0.25em;
+    min-height: 150px !important;
+}
+
+.btn-submit
+{
+    text-align: center;
+
+}
+
+.dropdown-item-l
+{
+    width: 100%;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}

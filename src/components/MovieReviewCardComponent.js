@@ -21,12 +21,10 @@ export default class MovieListCardComponent extends React.Component {
                     </div>
                     {
                         this.props.currentUsername === localStorage.getItem("username") &&
-                        <div className="remove-button">
-                            <button className="btn btn-danger"
-                                    onClick={() => this.props.removeMovieFromList(this.props.movie.movieId,
-                                                                                  this.props.currentUsername)}>
-                                Remove
-                            </button>
+                        <div className="container-fluid edit-button">
+                            <Link to={`/movie/review/${this.props.movie.movieId}`}>
+                                Edit
+                            </Link>
                         </div>
                     }
                 </div>
