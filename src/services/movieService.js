@@ -72,9 +72,9 @@ export default class MovieService {
             .then(response => response.json());
 
     //Delete recommended movie from critic's recommended movie list
-    deleteRecommendedMovie = (movieId, username) => {
-        return fetch(baseURL + "/api/recommend/critic/" + username + "/movie/" + movieId, {
-            method: 'delete',
+    undoRecommendMovie = (movieId, username) => {
+        return fetch(baseURL + "/api/unrecommend/critic/" + username + "/movie/" + movieId, {
+            method: 'post',
             headers: {
                 'content-type': 'application/json'
             }
@@ -91,10 +91,10 @@ export default class MovieService {
         })
     };
 
-    //Delete liked movie from fan's liked movie list
-    deleteLikedMovie = (movieId, username) => {
-        return fetch(baseURL + "/api/like/fan/"+username+"/movie/"+movieId, {
-            method: 'delete',
+    //Unlike the movie
+    undoLikeMovie = (movieId, username) => {
+        return fetch(baseURL + "/api/unlike/fan/"+username+"/movie/"+movieId, {
+            method: 'post',
             headers: {
                 'content-type': 'application/json'
             }

@@ -579,8 +579,8 @@ export const getActorDetails = (dispatch, actorId) => {
 /**
  * DELETE RECOMMENDED MOVIE FROM LIST
  */
-export const removeRecommendedMovieFromList = (dispatch, movieId, username) => {
-    movieService.deleteRecommendedMovie(movieId, username)
+export const undoRecommendMovie = (dispatch, movieId, username) => {
+    movieService.undoRecommendMovie(movieId, username)
         .then(() => {
             dispatch({
                 type:constants.SET_DELETE_RECOMMENDED_MOVIE_ALERT,
@@ -606,10 +606,10 @@ export const removeReviewedMovieFromList = (dispatch, movieId, username) => {
 };
 
 /**
- * DELETE LIKED MOVIE FROM LIST
+ * UNLIKE MOVIE FROM LIST
  */
-export const removeLikedMovieFromList = (dispatch, movieId, username) => {
-    movieService.deleteLikedMovie(movieId, username)
+export const undoLikeMovie = (dispatch, movieId, username) => {
+    movieService.undoLikeMovie(movieId, username)
         .then(() => {
                 dispatch({
                     type:constants.SET_DELETE_LIKED_MOVIE_ALERT,
@@ -624,8 +624,8 @@ export const removeLikedMovieFromList = (dispatch, movieId, username) => {
 /**
  * DELETE FOLLOWED ACTOR FROM LIST
  */
-export const removeActorFromList = (dispatch, actorId, username) => {
-    actorService.deleteActorFromList(actorId, username)
+export const unfollowActor = (dispatch, actorId, username) => {
+    actorService.unfollowActor(actorId, username)
         .then(() => {
                 dispatch({
                     type:constants.SET_DELETE_ACTOR_FOLLOWED_ALERT,

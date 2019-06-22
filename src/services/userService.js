@@ -101,8 +101,8 @@ export default class UserService {
                 if(users[0].dtype === "Fan"){
 
                     //Remove fan from a fan's follower list
-                    return fetch(baseURL+"/api/remove/fan1/"+username1+"/fan2/"+username2, {
-                        method: 'post',
+                    return fetch(baseURL+"/api/fan1/"+username1+"/fan2/"+username2, {
+                        method: 'delete',
                         headers: {
                             'content-type': 'application/json'
                         }
@@ -110,8 +110,8 @@ export default class UserService {
                 }
 
                 //Remove fan from a critic's follower list
-                return fetch(baseURL+"/api/remove/critic/"+username1+"/fan/"+username2, {
-                    method: 'post',
+                return fetch(baseURL+"/api/critic/"+username1+"/fan/"+username2, {
+                    method: 'delete',
                     headers: {
                         'content-type': 'application/json'
                     }

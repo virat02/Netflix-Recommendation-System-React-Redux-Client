@@ -8,7 +8,7 @@ const stateToPropertyMapper = state => ({
 
 const dispatcherToPropsMapper = dispatch => ({
     getMoviesRecommended: username => actions.getMoviesRecommended(dispatch, username),
-    removeMovieFromList: (movieId, username) => actions.removeRecommendedMovieFromList(dispatch, movieId, username)
+    removeMovieFromList: (movieId, username) => actions.undoRecommendMovie(dispatch, movieId, username)
 
 });
 

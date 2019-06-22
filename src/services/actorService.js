@@ -36,9 +36,9 @@ export default class ActorService {
         });
 
     //Delete an actor from the followed actor's list
-    deleteActorFromList = (actorId, username) =>
-        fetch(baseURL+ "/api/delete/actor/fan/"+username+"/actor/"+actorId, {
-            method: 'delete',
+    unfollowActor = (actorId, username) =>
+        fetch(baseURL+ "/api/unfollow/fan/"+username+"/actor/"+actorId, {
+            method: 'post',
             headers: {
                 'content-type': 'application/json'
             }

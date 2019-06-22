@@ -93,7 +93,8 @@ export default class UserProfileComponent extends React.Component {
                             </Link>
                         </li>
                         {
-                            (this.state.userView.dtype === "Fan" || this.props.localRole === "Admin") &&
+                            (this.state.userView.dtype === "Fan" ||
+                                (this.props.localRole === "Admin" && this.state.userView.dtype === "Fan")) &&
                             <li className="nav-item"
                                 onClick={this.props.activeFanFollowingPill}>
                                 <Link to={`/profile/${this.state.userView.username}/fan/following`}
@@ -103,7 +104,8 @@ export default class UserProfileComponent extends React.Component {
                             </li>
                         }
                         {
-                            (this.state.userView.dtype === "Fan" || this.props.localRole === "Admin") &&
+                            (this.state.userView.dtype === "Fan" ||
+                                (this.props.localRole === "Admin" && this.state.userView.dtype === "Fan")) &&
                           <li className="nav-item"
                               onClick={this.props.activeCriticFollowingPill}>
                               <Link to={`/profile/${this.state.userView.username}/critic/following`}
@@ -113,7 +115,8 @@ export default class UserProfileComponent extends React.Component {
                           </li>
                         }
                         {
-                            (this.state.userView.dtype === "Fan" || this.props.localRole === "Admin") &&
+                            (this.state.userView.dtype === "Fan" ||
+                                (this.props.localRole === "Admin" && this.state.userView.dtype === "Fan")) &&
                             <li className="nav-item"
                                 onClick={this.props.activeActorFollowingPill}>
                                 <Link to={`/profile/${this.state.userView.username}/actorsFollowed`}
@@ -123,7 +126,8 @@ export default class UserProfileComponent extends React.Component {
                             </li>
                         }
                         {
-                            (this.state.userView.dtype === "Fan" || this.props.localRole === "Admin") &&
+                            (this.state.userView.dtype === "Fan" ||
+                                (this.props.localRole === "Admin" && this.state.userView.dtype === "Fan")) &&
                             <li className="nav-item"
                                 onClick={this.props.activeMoviesLikePill}>
                                 <Link to={`/profile/${this.state.userView.username}/moviesLiked`}
@@ -133,7 +137,8 @@ export default class UserProfileComponent extends React.Component {
                             </li>
                         }
                         {
-                            (this.state.userView.dtype === "Critic" || this.props.localRole === "Admin") &&
+                            (this.state.userView.dtype === "Critic" ||
+                                (this.props.localRole === "Admin" && this.state.userView.dtype === "Critic")) &&
                             <li className="nav-item"
                                 onClick={this.props.activeMoviesReviewPill}>
                                 <Link to={`/profile/${this.state.userView.username}/moviesReviewed`}
@@ -143,7 +148,8 @@ export default class UserProfileComponent extends React.Component {
                             </li>
                         }
                         {
-                            (this.state.userView.dtype === "Critic" || this.props.localRole === "Admin") &&
+                            (this.state.userView.dtype === "Critic" ||
+                                (this.props.localRole === "Admin" && this.state.userView.dtype === "Critic")) &&
                             <li className="nav-item"
                                 onClick={this.props.activeMoviesRecommendPill}>
                                 <Link to={`/profile/${this.state.userView.username}/moviesRecommended`}

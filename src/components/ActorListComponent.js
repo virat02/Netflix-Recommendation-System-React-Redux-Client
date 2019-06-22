@@ -22,7 +22,7 @@ export default class ActorListComponent extends React.Component {
                             className="col-2"
                             getActorDetails = {this.props.getActorDetails}
                             actor={actor}
-                            removeActorFromList = {this.props.removeActorFromList}
+                            unfollowActor = {this.props.unfollowActor}
                             currentUsername = {this.props.match.params.username}
                             key={actor.actorId}/>)
                 }

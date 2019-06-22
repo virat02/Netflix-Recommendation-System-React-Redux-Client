@@ -20,10 +20,11 @@ export default class ActorCardComponent extends React.Component {
                         </Link>
                     </div>
                     {
-                       this.props.currentUsername === localStorage.getItem("username") &&
+                        (this.props.currentUsername === localStorage.getItem("username")
+                            || localStorage.getItem("userRole") === "Admin") &&
                            <div className="remove-button">
                                <button className="btn btn-danger"
-                                       onClick={() => this.props.removeActorFromList(this.props.actor.actorId,
+                                       onClick={() => this.props.unfollowActor(this.props.actor.actorId,
                                                                                      this.props.currentUsername)}>
                                    Remove
                                </button>

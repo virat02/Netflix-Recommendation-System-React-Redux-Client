@@ -45,11 +45,13 @@ export default class NavBarComponent extends Component{
                 <span className={"sr-only"}>(current)</span>
             </Link>
         } else {
-            return <Link to={"/profile/" + this.props.localUsername}
-                         className={'wbdv-link nav-link'}>
-                Profile
-                <span className={"sr-only"}>(current)</span>
-            </Link>
+            if(this.props.localRole !== "Admin"){
+                return <Link to={"/profile/" + this.props.localUsername}
+                             className={'wbdv-link nav-link'}>
+                    Profile
+                    <span className={"sr-only"}>(current)</span>
+                </Link>
+            }
         }
     }
 

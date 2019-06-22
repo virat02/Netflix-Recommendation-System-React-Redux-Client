@@ -20,7 +20,8 @@ export default class MovieListCardComponent extends React.Component {
                         </Link>
                     </div>
                     {
-                        this.props.currentUsername === localStorage.getItem("username") &&
+                        (this.props.currentUsername === localStorage.getItem("username")
+                            || localStorage.getItem("userRole") === "Admin") &&
                         <div className="container-fluid edit-button">
                             <Link to={`/movie/review/${this.props.movie.movieId}`}>
                                 Edit

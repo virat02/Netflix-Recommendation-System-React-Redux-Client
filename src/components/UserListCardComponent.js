@@ -21,7 +21,8 @@ export default class UserListCardComponent extends React.Component {
                         </Link>
                         &nbsp;
                         {
-                            this.props.currentUsername === localStorage.getItem("username") &&
+                            (this.props.currentUsername === localStorage.getItem("username")
+                                || localStorage.getItem("userRole") === "Admin") &&
                             <button className="btn btn-danger user-btn"
                                     onClick={() => this.props.unfollowUser(this.props.currentUsername,
                                         this.props.user.username)}>
