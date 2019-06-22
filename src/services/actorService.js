@@ -27,22 +27,20 @@ export default class ActorService {
             .then(response => response.json());
 
     //Follow an actor
-    followActor = (actorId, username) => {
-        return fetch(baseURL + "/api/follow/fan/" + username + "/actor/" + actorId, {
+    followActor = (actorId, username) =>
+        fetch(baseURL + "/api/follow/fan/" + username + "/actor/" + actorId, {
             method: 'post',
             headers: {
                 'content-type': 'application/json'
             }
-        })
-    };
+        });
 
     //Delete an actor from the followed actor's list
-    deleteActorFromList = (actorId, username) => {
-        return fetch(baseURL+ "/api/delete/actor/fan/"+username+"/actor/"+actorId, {
+    deleteActorFromList = (actorId, username) =>
+        fetch(baseURL+ "/api/delete/actor/fan/"+username+"/actor/"+actorId, {
             method: 'delete',
             headers: {
                 'content-type': 'application/json'
             }
-        })
-    };
+        });
 }

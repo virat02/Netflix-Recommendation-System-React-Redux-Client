@@ -35,4 +35,51 @@ export default class UserService {
         return fetch(baseURL+"/api/user")
             .then(response => response.json());
     };
-}
+
+    //Follow a user
+    followUser = (username1, username2) => {
+        return this.getUsers(username2)
+            .then(users => {
+
+                    //Fan follows Fan
+                    if (users[0].dtype === "Fan") {
+                        return fetch(baseURL + "/api/follow/fan1/" + username1 + "/fan2/" + username2, {
+                            method: 'post',
+                            headers: {
+                                'content-type': 'application/json'
+                            }
+                        })
+                    }
+
+                    //Fan follows Critic
+                    return fetch(baseURL + "/api/follow/fan/" + username1 + "/critic/" + username2, {
+                        method: 'post',
+                        headers: {
+                            'content-type': 'application/json'
+                        }
+                    });
+                }
+            )
+    };
+
+    //Unfollow a user
+    unfollowUser = (username1, username2, user2Role) => {
+
+        //Fan unfollows Fan
+        if (user2Role === "Fan") {
+            return fetch(baseURL + "/api/unfollow/fan1/" + username1 + "/fan2/" + username2, {
+                method: 'post',
+                headers: {
+                    'content-type': 'application/json'
+                }
+            })
+        }
+        //Fan unfollows Critic
+        return fetch(baseURL + "/api/unfollow/fan/" + username1 + "/critic/" + username2, {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+    };
+};

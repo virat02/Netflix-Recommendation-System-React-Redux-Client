@@ -286,7 +286,7 @@ export const reviewMovie = (dispatch, movieId, username) => {
     movieService.reviewMovie(movieId, username)
         .then(() =>
             dispatch({
-                type:constants.SET_FOLLOWED_ALERT,
+                type:constants.SET_REVIEWED_ALERT,
             })
         )
 };
@@ -310,10 +310,50 @@ export const followActor = (dispatch, actorId, username) => {
     actorService.followActor(actorId,username)
         .then(() =>
             dispatch({
-                type: constants.SET_FOLLOWED_ALERT,
+                type: constants.SET_FOLLOWED_ACTOR_ALERT,
                 message: "Followed the actor!"
             }))
 };
+
+/**
+ * FOLLOW A USER METHOD
+ */
+export const followUser = (dispatch, username1, username2) =>
+    userService.followUser(username1, username2)
+        .then(() =>
+            dispatch({
+                type:constants.SET_FOLLOWED_USER_ALERT,
+                message: "Followed the user!"
+            })
+        );
+
+/**
+ * UNFOLLOW A USER METHOD
+ */
+export const unfollowUser = (dispatch, username1, username2) => {
+
+    userService.getUsers(username2)
+        .then(users =>
+            userService.unfollowUser(username1, users[0].username, users[0].dtype)
+                .then(() => {
+                        dispatch({
+                            type:constants.SET_UNFOLLOWED_USER_ALERT,
+                            message: "Unfollowed "+users[0].username
+                        });
+
+                        if(users[0].dtype === "Fan"){
+                            return getFollowing(dispatch, username1);
+                        }
+
+                        return getCriticsFollowed(dispatch, username1);
+                    }
+
+                )
+        )
+
+};
+
+
 
 /**
  * SHOW REVIEW MODAL METHOD
@@ -327,77 +367,48 @@ export const showReviewModal = dispatch =>
 /**
  * METHOD TO GET FOLLOWERS
  */
-export const getFollowers = (dispatch, username) => {
+export const getFollowers = (dispatch, username) =>
     userService.getUsers(username)
         .then(users =>
                 userService.getFollowers(users[0].username, users[0].dtype)
                     .then(followers =>
-                        followers.length !== 0 ?
-
-                            dispatch({
-                                type: constants.GET_FOLLOWERS,
-                                followers: followers
-                            })
-
-                            :
-
-                            dispatch({
-                                type: constants.SET_NO_FOLLOWERS_ALERT,
-                                message: "No followers!"
-                            })
+                        dispatch({
+                            type: constants.GET_FOLLOWERS,
+                            followers: followers
+                        })
                     )
-        )
-};
+        );
 
 /**
  * METHOD TO GET FOLLOWING
  */
-export const getFollowing = (dispatch, username) => {
+export const getFollowing = (dispatch, username) =>
 
     userService.getUsers(username)
         .then(users =>
                 userService.getFollowing(users[0].username, users[0].dtype)
                     .then(following =>
-                        following.length !== 0 ?
-
-                            dispatch({
-                                type: constants.GET_FOLLOWING,
-                                following: following
-                            })
-                            :
-                            dispatch({
-                                type: constants.SET_NO_FAN_FOLLOWING_ALERT,
-                                message: "No fans followed!"
-                            })
+                        dispatch({
+                            type: constants.GET_FOLLOWING,
+                            following: following
+                        })
                     )
-        )
-};
+        );
 
 /**
  * METHOD TO GET LIST OF CRITICS FOLLOWED BY A FAN
  */
-export const getCriticsFollowed = (dispatch, username) => {
+export const getCriticsFollowed = (dispatch, username) =>
     userService.getUsers(username)
         .then(users =>
             userService.getCriticsFollowed(users[0].username)
                 .then(criticsFollowed =>
-
-                    criticsFollowed.length !== 0 ?
-
                         dispatch({
                             type: constants.GET_CRITICS_FOLLOWED,
                             criticsFollowed: criticsFollowed
                         })
-
-                        :
-
-                        dispatch({
-                            type: constants.SET_NO_CRITIC_FOLLOWING_ALERT,
-                            message: "No critics followed!"
-                        })
                 )
-        )
-};
+        );
 
 /**
  * METHOD TO GET ACTORS FOLLOWED

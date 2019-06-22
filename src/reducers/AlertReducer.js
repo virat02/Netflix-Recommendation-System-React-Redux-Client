@@ -7,7 +7,9 @@ const AlertReducer = (state = {}, action) => {
         case constants.ERROR:
         case constants.SET_LIKED_ALERT:
         case constants.SET_RECOMMENDED_ALERT:
-        case constants.SET_FOLLOWED_ALERT:
+        case constants.SET_FOLLOWED_ACTOR_ALERT:
+        case constants.SET_FOLLOWED_USER_ALERT:
+        case constants.SET_UNFOLLOWED_USER_ALERT:
         case constants.SET_NO_FOLLOWERS_ALERT:
         case constants.SET_NO_FAN_FOLLOWING_ALERT:
         case constants.SET_NO_CRITIC_FOLLOWING_ALERT:

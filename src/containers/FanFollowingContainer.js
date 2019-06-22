@@ -8,6 +8,7 @@ const stateToPropertyMapper = state => ({
 
 export const dispatcherToPropsMapper = dispatch => ({
     getFollowing: username => actions.getFollowing(dispatch, username),
+    unfollowUser: (username1, username2) => actions.unfollowUser(dispatch, username1, username2)
 });
 
 const FanFollowingContainer = connect(stateToPropertyMapper, dispatcherToPropsMapper)(FanFollowingComponent);

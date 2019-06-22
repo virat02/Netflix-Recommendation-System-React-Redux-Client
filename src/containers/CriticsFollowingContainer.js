@@ -8,6 +8,7 @@ const stateToPropertyMapper = state => ({
 
 export const dispatcherToPropsMapper = dispatch => ({
     getCriticsFollowed: username => actions.getCriticsFollowed(dispatch, username),
+    unfollowUser: (username1, username2) => actions.unfollowUser(dispatch, username1, username2)
 });
 
 const CriticsFollowingContainer = connect(stateToPropertyMapper,dispatcherToPropsMapper)(CriticsFollowingComponent);

@@ -15,6 +15,7 @@ export default class UserSearchComponent extends React.Component {
                         <UserCardComponent
                             className="col-2"
                             user={user}
+                            followUser = {this.props.followUser}
                             key={user.username}/>)
                 }
             </div>
