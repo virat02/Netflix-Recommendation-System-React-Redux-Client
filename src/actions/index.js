@@ -341,7 +341,7 @@ export const unfollowUser = (dispatch, username1, username2) => {
                             message: "Unfollowed "+users[0].username
                         });
 
-                        if(users[0].dtype === "Fan"){
+                        if(username1.dtype === "Fan"){
                             return getFollowing(dispatch, username1);
                         }
 
