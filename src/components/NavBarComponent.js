@@ -128,14 +128,6 @@ export default class NavBarComponent extends Component{
                                         <span className="sr-only">(current)</span>
                                     </Link>
                                 </li>
-                                {userRole &&
-                                userRole === 'Admin' &&
-                                <li className={"nav-item"}>
-                                    <Link to={`/console`} className={'wbdv-link nav-link'}>
-                                        Admin-Console
-                                        <span className={"sr-only"}>(current)</span>
-                                    </Link>
-                                </li>}
                                 <li className={"nav-item"}>
                                     {this.renderLogin()}
                                 </li>

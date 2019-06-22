@@ -10,6 +10,7 @@ import UserReducer from './UserReducer';
 import ActorReducer from './ActorReducer';
 import ActivatePillReducer from "./ActivatePillReducer";
 import ButtonReducer from "./ButtonReducer";
+import RatingReducer from "./RatingReducer";
 
 const RootReducer = combineReducers({
     LoginReducer,
@@ -21,7 +22,8 @@ const RootReducer = combineReducers({
     UserReducer,
     ActorReducer,
     ActivatePillReducer,
-    ButtonReducer
+    ButtonReducer,
+    RatingReducer
 });
 
 export default RootReducer;

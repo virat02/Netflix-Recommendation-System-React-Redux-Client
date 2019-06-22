@@ -121,4 +121,19 @@ export default class UserService {
             )
     };
 
+    //Review a movie
+    review = (username, rating, reviewText, movieId) => {
+        return fetch(baseURL+"/api/review/critic/"+username+"/movie/"+movieId , {
+            method: 'post',
+            body: JSON.stringify({
+                rating: rating,
+                review: reviewText
+            }),
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+    };
+
+
 };

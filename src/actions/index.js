@@ -279,17 +279,17 @@ export const likeMovie = (dispatch, movieId, username) => {
             }))
 };
 
-/**
- * REVIEW A MOVIE METHOD
- */
-export const reviewMovie = (dispatch, movieId, username) => {
-    movieService.reviewMovie(movieId, username)
-        .then(() =>
-            dispatch({
-                type:constants.SET_REVIEWED_ALERT,
-            })
-        )
-};
+// /**
+//  * REVIEW A MOVIE METHOD
+//  */
+// export const reviewMovie = (dispatch, movieId, username) => {
+//     movieService.reviewMovie(movieId, username)
+//         .then(() =>
+//             dispatch({
+//                 type:constants.SET_REVIEWED_ALERT,
+//             })
+//         )
+// };
 
 /**
  * RECOMMEND A MOVIE METHOD
@@ -367,6 +367,19 @@ export const removeFollower = (dispatch, username1, username2) => {
             return getFollowers(dispatch, username1);
         })
 
+};
+
+/**
+ * METHOD TO REVIEW A MOVIE
+ */
+export const doReview = (dispatch, username, rating, reviewText, movieId) => {
+    userService.review(username, rating, reviewText, movieId)
+        .then( () => {
+            dispatch({
+                type: constants.SET_REVIEWED_ALERT,
+                message: "Reviewed movie!"
+            });
+        })
 };
 
 /**
@@ -632,5 +645,23 @@ export const removeActorFromList = (dispatch, actorId, username) => {
         )
 };
 
+/**
+ * METHOD TO CHANGE RATING
+ */
+export const changeRating = (dispatch, rating) => {
+    dispatch({
+        type: constants.CHANGE_RATING,
+        rating: rating
+    })
+};
 
+/**
+ * Method to change review text
+ */
+export const changeReviewText = (dispatch, reviewText) => {
+    dispatch({
+        type: constants.CHANGE_REVIEW_TEXT,
+        reviewText: reviewText
+    })
+};
 

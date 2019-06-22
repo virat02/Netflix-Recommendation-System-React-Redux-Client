@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import "../styles/movieCard.css";
 
 const MovieCardComponent = ({movie}) =>
@@ -11,9 +12,9 @@ const MovieCardComponent = ({movie}) =>
             </div>
             <div className="tile__details">
                 <div className="tile__title">
-                    <a className="details-btn" href={`/movie/${movie.id}`}>
+                    <Link className="details-btn" to={`/movie/${movie.id}`}>
                         {movie.title}
-                    </a>
+                    </Link>
                 </div>
             </div>
         </a>

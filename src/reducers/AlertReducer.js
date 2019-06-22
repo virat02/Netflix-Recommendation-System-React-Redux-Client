@@ -21,6 +21,7 @@ const AlertReducer = (state = {}, action) => {
         case constants.SET_DELETE_LIKED_MOVIE_ALERT:
         case constants.SET_DELETE_ACTOR_FOLLOWED_ALERT:
         case constants.SET_REMOVE_USER_ALERT:
+        case constants.SET_REVIEWED_ALERT:
             alert(action.message);
             return state;
         default :

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import "../styles/movieCard.css";
 import "../styles/movieDetails.css";
 
@@ -57,14 +58,11 @@ export default class MovieDetailsComponent extends React.Component {
                                 &nbsp;&nbsp;
                                 {
                                     this.props.localRole === "Critic" &&
-                                    <button id="btnReview"
-                                            type="button"
-                                            className="btn btn-info btn-md"
-                                            data-toggle="modal"
-                                            data-target="#reviewModal"
-                                            onClick={this.props.showModal}>
-                                        Review
-                                    </button>
+                                    <Link to={`/movie/review/${this.props.movie.id}`}>
+                                        <button id="btnReview" className="btn btn-info btn-md">
+                                            Review
+                                        </button>
+                                    </Link>
                                 }
                             </div>
                         </div>

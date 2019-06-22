@@ -12,9 +12,7 @@ const stateToPropertyMapper = state => ({
 const dispatcherToPropsMapper = dispatch => ({
     getMovieDetails: id => actions.getMovieDetails(dispatch, id),
     likeMovie: (movieId, username) => actions.likeMovie(dispatch, movieId, username),
-    recommendMovie: (movieId, username) => actions.recommendMovie(dispatch, movieId, username),
-    reviewMovie: (movieId, username) => actions.reviewMovie(dispatch, movieId, username),
-    showModal: () => actions.showReviewModal(dispatch)
+    recommendMovie: (movieId, username) => actions.recommendMovie(dispatch, movieId, username)
 });
 
 const MovieDetailsContainer = connect(stateToPropertyMapper, dispatcherToPropsMapper)(MovieDetailsComponent);

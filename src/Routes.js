@@ -13,6 +13,7 @@ import UserProfileContainer from "./containers/UserProfileContainer";
 import ActorSearchContainer from "./containers/ActorSearchContainer";
 import ActorDetailsContainer from "./containers/ActorDetailsContainer";
 import UserSearchContainer from "./containers/UserSearchContainer";
+import CriticReviewContainer from "./containers/CriticReviewContainer";
 
 export default class Routes extends Component {
 
@@ -29,6 +30,7 @@ export default class Routes extends Component {
                     <Route exact path={"/actors"} component={ActorSearchContainer}/>
                     <Route exact path={"/users"} component={UserSearchContainer}/>
                     <Route exact path={"/movie/:movieId"} component={MovieDetailsContainer}/>
+                    <Route exact path={"/movie/review/:movieId"} component={CriticReviewContainer}/>
                     <Route exact path={"/actor/:actorId"} component={ActorDetailsContainer}/>
                     <Route path={"/profile/:username"} component={UserProfileContainer} />
                 </div>
