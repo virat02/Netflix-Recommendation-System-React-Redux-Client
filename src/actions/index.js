@@ -690,3 +690,16 @@ export const changeReviewText = (dispatch, reviewText) => {
     })
 };
 
+/**
+ * DELETE USER METHOD FOR AN ADMIN
+ */
+export const deleteUser = (dispatch, userId) =>
+    userService.deleteUser(userId)
+        .then(() => {
+                dispatch({
+                    type: constants.SET_DELETE_USER_ALERT,
+                    message: "Deleted the user!"
+                });
+
+                searchUsersByKeyword(dispatch, "");
+        });

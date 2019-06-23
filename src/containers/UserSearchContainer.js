@@ -7,7 +7,8 @@ const stateToPropertyMapper = state => ({
 });
 
 const dispatcherToPropsMapper = dispatch => ({
-    followUser: (username1, username2) => actions.followUser(dispatch, username1, username2)
+    followUser: (username1, username2) => actions.followUser(dispatch, username1, username2),
+    deleteUser: userId => actions.deleteUser(dispatch, userId),
 });
 
 const UserSearchContainer = connect(stateToPropertyMapper, dispatcherToPropsMapper)(UserSearchComponent);

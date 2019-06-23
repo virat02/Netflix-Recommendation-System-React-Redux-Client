@@ -150,4 +150,12 @@ export default class UserService {
                         .then(response => response.json())
             );
 
+    //Delete a user
+    deleteUser = userId =>
+        fetch(baseURL+"/api/user/"+userId, {
+            method: 'delete',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
 };

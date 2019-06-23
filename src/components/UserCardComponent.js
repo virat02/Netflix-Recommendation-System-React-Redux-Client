@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import history from "../History";
 import "../styles/userCard.css";
 
 export default class UserCardComponent extends React.Component {
@@ -19,7 +20,17 @@ export default class UserCardComponent extends React.Component {
                               className="btn btn-primary user-btn-primary user-btn">
                             See Profile
                         </Link>
-                        &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        {
+                            localStorage.getItem("userRole") === "Admin" &&
+                            <button
+                                className="btn btn-danger"
+                                onClick={() => {
+                                    this.props.deleteUser(this.props.user.userId)
+                                }}>
+                                Delete User
+                            </button>
+                        }
                         {
                             this.props.user.username !== localStorage.getItem("username") &&
                             localStorage.getItem("userRole") === "Fan" &&

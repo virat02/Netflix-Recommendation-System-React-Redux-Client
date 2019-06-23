@@ -25,6 +25,7 @@ const AlertReducer = (state = {}, action) => {
         case constants.SET_ALREADY_LIKED_ALERT:
         case constants.SET_ALREADY_FOLLOW_ACTOR_ALERT:
         case constants.SET_ALREADY_FOLLOWED_USER_ALERT:
+        case constants.SET_DELETE_USER_ALERT:
             alert(action.message);
             return state;
         default :
