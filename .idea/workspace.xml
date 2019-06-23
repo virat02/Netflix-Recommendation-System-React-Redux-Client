@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c17363f-c748-4ea4-80cf-7edf5189d76f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/actorService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/actorService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stores/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/movieService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/movieService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/userService.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +26,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/stores/store.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/services/actorService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            <state relative-caret-position="119">
+              <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -63,6 +63,7 @@
       <find>details-btn</find>
       <find>tile__img</find>
       <find>redux-devtools-extension</find>
+      <find>localhost</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,17 +112,17 @@
         <option value="$PROJECT_DIR$/src/containers/MoviesLikeContainer.js" />
         <option value="$PROJECT_DIR$/src/containers/MovieRecommendContainer.js" />
         <option value="$PROJECT_DIR$/src/components/MovieDetailsComponent.js" />
-        <option value="$PROJECT_DIR$/src/services/movieService.js" />
         <option value="$PROJECT_DIR$/src/containers/UserSearchContainer.js" />
         <option value="$PROJECT_DIR$/src/constants/index.js" />
         <option value="$PROJECT_DIR$/src/reducers/AlertReducer.js" />
-        <option value="$PROJECT_DIR$/src/services/userService.js" />
         <option value="$PROJECT_DIR$/src/components/UserSearchComponent.js" />
         <option value="$PROJECT_DIR$/src/components/UserCardComponent.js" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
         <option value="$PROJECT_DIR$/package-lock.json" />
-        <option value="$PROJECT_DIR$/src/services/actorService.js" />
         <option value="$PROJECT_DIR$/src/stores/store.js" />
+        <option value="$PROJECT_DIR$/src/services/userService.js" />
+        <option value="$PROJECT_DIR$/src/services/movieService.js" />
+        <option value="$PROJECT_DIR$/src/services/actorService.js" />
       </list>
     </option>
   </component>
@@ -215,7 +216,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175738000" />
+    <option name="totallyTimeSpent" value="176016000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -554,13 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/movieService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="94" column="37" lean-forward="true" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UserListCardComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -609,13 +603,6 @@
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/userService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="159" column="10" lean-forward="true" selection-start-line="159" selection-start-column="10" selection-end-line="159" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -673,17 +660,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/actorService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/userService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/movieService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -694,6 +688,13 @@
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/actorService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
         </state>
       </provider>
     </entry>
