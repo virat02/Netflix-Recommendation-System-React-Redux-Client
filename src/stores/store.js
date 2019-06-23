@@ -1,11 +1,6 @@
-import {createStore, applyMiddleware} from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension'
+import {createStore} from 'redux';
 import RootReducer from '../reducers/RootReducer';
 
-let store = createStore(RootReducer, composeWithDevTools(
-    applyMiddleware(),
-    // other store enhancers if any
-    )
-);
+let store = createStore(RootReducer);
 
 export default store;
