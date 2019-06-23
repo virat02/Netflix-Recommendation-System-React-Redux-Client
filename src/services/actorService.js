@@ -43,4 +43,9 @@ export default class ActorService {
                 'content-type': 'application/json'
             }
         });
+
+    //Check if fan follows an actor
+    checkIfFanFollowsActor = (username, actorId) =>
+        fetch(baseURL + "/api/check/follow/fan/"+username+"/actor/"+actorId)
+            .then(response => response.json())
 }

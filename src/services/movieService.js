@@ -101,4 +101,9 @@ export default class MovieService {
         })
     };
 
+    //Check if fan likes a movie
+    checkIfFanLikesMovie = (username, movieId) =>
+        fetch(baseURL + "/api/check/like/fan/"+username+"/movie/"+movieId)
+            .then(response => response.json())
+
 }

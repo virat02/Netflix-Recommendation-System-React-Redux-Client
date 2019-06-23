@@ -270,14 +270,25 @@ export const getPopularMovies = dispatch => {
 /**
  * LIKE A MOVIE METHOD
  */
-export const likeMovie = (dispatch, movieId, username) => {
-    movieService.likeMovie(movieId, username)
-        .then(() =>
-            dispatch({
-                type:constants.SET_LIKED_ALERT,
-                message: "Liked the movie!"
-            }))
-};
+export const likeMovie = (dispatch, movieId, username) =>
+
+    movieService.checkIfFanLikesMovie(username, movieId)
+        .then(bool =>
+                !bool ?
+                    movieService.likeMovie(movieId, username)
+                        .then(() =>
+                            dispatch({
+                                type:constants.SET_LIKED_ALERT,
+                                message: "Liked the movie!"
+                            }))
+                    :
+
+                    dispatch({
+                        type:constants.SET_ALREADY_LIKED_ALERT,
+                        message: "You already like the movie!"
+                    })
+
+        );
 
 /**
  * RECOMMEND A MOVIE METHOD
@@ -294,26 +305,48 @@ export const recommendMovie = (dispatch, movieId, username) => {
 /**
  * FOLLOW AN ACTOR METHOD
  */
-export const followActor = (dispatch, actorId, username) => {
-    actorService.followActor(actorId,username)
-        .then(() =>
-            dispatch({
-                type: constants.SET_FOLLOWED_ACTOR_ALERT,
-                message: "Followed the actor!"
-            }))
-};
+export const followActor = (dispatch, actorId, username) =>
+
+    actorService.checkIfFanFollowsActor(username, actorId)
+        .then(bool =>
+            !bool?
+                actorService.followActor(actorId,username)
+                    .then(() =>
+                        dispatch({
+                            type: constants.SET_FOLLOWED_ACTOR_ALERT,
+                            message: "Followed the actor!"
+                        }))
+                :
+
+                dispatch({
+                    type: constants.SET_ALREADY_FOLLOW_ACTOR_ALERT,
+                    message: "You already follow this actor!"
+                })
+
+            );
 
 /**
  * FOLLOW A USER METHOD
  */
 export const followUser = (dispatch, username1, username2) =>
-    userService.followUser(username1, username2)
-        .then(() => {
-            dispatch({
-                type: constants.SET_FOLLOWED_USER_ALERT,
-                message: "Followed "+username2
-            });
-        });
+
+    userService.checkIfFanFollowsAnotherUser(username1, username2)
+        .then(bool =>
+            !bool?
+                userService.followUser(username1, username2)
+                    .then(() =>
+                        dispatch({
+                            type: constants.SET_FOLLOWED_USER_ALERT,
+                            message: "Followed "+username2
+                        }))
+
+                :
+
+                dispatch({
+                    type: constants.SET_ALREADY_FOLLOWED_USER_ALERT,
+                    message: "You already follow "+username2
+                })
+        );
 
 /**
  * UNFOLLOW A USER METHOD

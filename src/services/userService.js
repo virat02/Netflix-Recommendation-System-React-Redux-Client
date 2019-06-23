@@ -135,5 +135,19 @@ export default class UserService {
         })
     };
 
+    //Check if fan follows another fan or a critic
+    checkIfFanFollowsAnotherUser = (username1, username2) =>
+
+        this.getUsers(username2)
+            .then(users =>
+                 users[0].dtype === "Fan" ?
+
+                    fetch(baseURL + "/api/check/follow/fan1/"+username1+"/fan2/"+username2)
+                        .then(response => response.json())
+                    :
+
+                    fetch(baseURL + "/api/check/follow/fan/"+username1+"/critic/"+username2)
+                        .then(response => response.json())
+            );
 
 };
