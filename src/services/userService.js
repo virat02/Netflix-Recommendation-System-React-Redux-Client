@@ -1,6 +1,7 @@
 let singleton = null;
 let users = {};
-let baseURL = "http://localhost:8080";
+// let baseURL = "http://localhost:8080";
+let baseURL = "https://netflix-recommendation-client.herokuapp.com";
 
 export default class UserService {
 
