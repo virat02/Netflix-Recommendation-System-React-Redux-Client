@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Live Project deployed on Heroku
+
+[See Project Demo](https://netflix-recommendation-client.herokuapp.com/)
+
 ## Available Scripts
 
 In the project directory, you can run:
